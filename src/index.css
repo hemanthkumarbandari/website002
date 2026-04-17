@@ -1,0 +1,45 @@
+﻿@import "tailwindcss";
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -6%;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 9999px;
+  filter: blur(0.5px);
+  animation-name: bubbleRise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) scale(0.95);
+    opacity: 0.3;
+  }
+  35% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-140%) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .bubble {
+    opacity: 0.18 !important;
+    filter: blur(0.4px);
+  }
+}

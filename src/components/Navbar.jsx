@@ -1,0 +1,89 @@
+import { useState } from 'react';
+import { ChevronDown, Menu, X } from 'lucide-react';
+import ASPlogo from '../../ASPlogo.jpg';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center">
+            <a href="/" className="inline-flex items-center transition-transform duration-300 hover:scale-105">
+              <img src={ASPlogo} alt="ASP Logo" className="h-10 md:h-14 lg:h-16 object-contain" />
+            </a>
+          </div>
+
+          {/* Center Menu - Desktop */}
+          <div className="hidden md:flex space-x-8">
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                Products
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {/* Dropdown */}
+              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-10">
+                <a href="/products/caaqms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">CAAQMS</a>
+                <a href="/products/cems" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">CEMS</a>
+                <a href="/products/eqms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">EQMS</a>
+                <a href="/products/portable" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Portable</a>
+                <a href="/products/water" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Water</a>
+                <a href="/products/analytical" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytical</a>
+                <a href="/products/gas-chromatography" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Gas Chromatography</a>
+              </div>
+            </div>
+            <a href="/services" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+            <a href="/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact Us</a>
+          </div>
+
+          {/* Right Side - Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">
+              Contact Sales
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 hover:text-gray-900">
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+              <div className="relative">
+                <button className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium flex items-center w-full">
+                  Products
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {/* Mobile Dropdown - simplified, no hover */}
+                <div className="pl-4">
+                  <a href="/products/caaqms" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">CAAQMS</a>
+                  <a href="/products/cems" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">CEMS</a>
+                  <a href="/products/eqms" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">EQMS</a>
+                  <a href="/products/portable" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Portable</a>
+                  <a href="/products/water" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Water</a>
+                  <a href="/products/analytical" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytical</a>
+                  <a href="/products/gas-chromatography" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Gas Chromatography</a>
+                </div>
+              </div>
+              <a href="/services" className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+              <a href="/contact" className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+              <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition w-full mt-2">
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
