@@ -1,23 +1,15 @@
 import { useState } from 'react';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
-import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check, ArrowRight } from 'lucide-react';
-=======
 import { Link, useNavigate } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
 import { useQuoteProducts } from '../hooks/useQuoteProducts';
->>>>>>> 3f8cd75 (2nd changes)
 
 // Import Images
 import img01 from '../assets/ASP Images Products/Gas Chromotagraphy/Gas chromatography.jpeg';
 
 const GasChromatography = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-<<<<<<< HEAD
-=======
   const navigate = useNavigate();
   const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
->>>>>>> 3f8cd75 (2nd changes)
 
   const categories = [
     'All',
@@ -145,12 +137,6 @@ const GasChromatography = () => {
                     )}
                     
                     <div className="mt-8 pt-6 border-t border-gray-100">
-<<<<<<< HEAD
-                      <button className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm group">
-                        Request Quote
-                        <ArrowRight className="w-4 h-4 ml-2 text-gray-400 group-hover:text-gray-600 transition-colors" />
-                      </button>
-=======
                       <div className="flex flex-wrap items-center gap-3">
                         <button
                           onClick={() => addProduct(product.title)}
@@ -173,7 +159,6 @@ const GasChromatography = () => {
                           Remove
                         </button>
                       </div>
->>>>>>> 3f8cd75 (2nd changes)
                     </div>
                   </div>
 

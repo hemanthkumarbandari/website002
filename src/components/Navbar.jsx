@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom';
->>>>>>> 3f8cd75 (2nd changes)
 import ASPlogo from '../../ASPlogo.jpg';
 
 const Navbar = () => {
@@ -15,7 +12,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="/" className="inline-flex items-center transition-transform duration-300 hover:scale-105">
+            <a href="/" className="inline-flex items-center ">
               <img src={ASPlogo} alt="ASP Logo" className="h-10 md:h-14 lg:h-16 object-contain" />
             </a>
           </div>
@@ -51,15 +48,9 @@ const Navbar = () => {
 
           {/* Right Side - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-<<<<<<< HEAD
-            <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">
-              Contact Sales
-            </button>
-=======
             <Link to="/contact" className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition inline-flex items-center">
               Contact Sales
             </Link>
->>>>>>> 3f8cd75 (2nd changes)
           </div>
 
           {/* Mobile menu button */}
@@ -92,15 +83,9 @@ const Navbar = () => {
               </div>
               <a href="/services" className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Services</a>
               <a href="/contact" className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
-<<<<<<< HEAD
-              <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition w-full mt-2">
-                Contact Sales
-              </button>
-=======
               <Link to="/contact" className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition w-full mt-2 block text-center">
                 Contact Sales
               </Link>
->>>>>>> 3f8cd75 (2nd changes)
             </div>
           </div>
         )}

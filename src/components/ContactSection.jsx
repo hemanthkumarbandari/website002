@@ -1,15 +1,9 @@
 import { useState } from 'react';
-<<<<<<< HEAD
-
-const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-=======
 import { useQuoteProducts } from '../hooks/useQuoteProducts';
 
 const DEFAULT_QUOTE_MESSAGE = 'Hey, I would like to get Quotation for these products!';
+
+const contactApiBase = import.meta.env.VITE_CONTACT_API_URL || '';
 
 const ContactSection = () => {
   const { quoteProducts } = useQuoteProducts();
@@ -17,8 +11,9 @@ const ContactSection = () => {
     name: '',
     email: '',
     message: DEFAULT_QUOTE_MESSAGE
->>>>>>> 3f8cd75 (2nd changes)
   });
+  const [submitStatus, setSubmitStatus] = useState('idle');
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -27,10 +22,40 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setSubmitStatus('loading');
+    setSubmitError('');
+
+    try {
+      const res = await fetch(`${contactApiBase}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          quoteProducts
+        })
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        const hint = data.details ? ` (${data.details})` : '';
+        setSubmitError(
+          (data.error || 'Something went wrong. Please try again.') + hint
+        );
+        setSubmitStatus('error');
+        return;
+      }
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: DEFAULT_QUOTE_MESSAGE });
+    } catch {
+      setSubmitError('Network error. Please check your connection and try again.');
+      setSubmitStatus('error');
+    }
   };
 
   return (
@@ -88,8 +113,6 @@ const ContactSection = () => {
                   required
                 ></textarea>
               </div>
-<<<<<<< HEAD
-=======
               {quoteProducts.length > 0 && (
                 <div className="rounded-lg border border-gray-700 bg-gray-800/80 p-4">
                   <p className="text-sm font-semibold mb-2">Selected products for quotation</p>
@@ -100,12 +123,22 @@ const ContactSection = () => {
                   </ul>
                 </div>
               )}
->>>>>>> 3f8cd75 (2nd changes)
+              {submitStatus === 'success' && (
+                <p className="text-sm text-green-400" role="status">
+                  Thank you — your message was sent. We will get back to you soon.
+                </p>
+              )}
+              {submitStatus === 'error' && submitError && (
+                <p className="text-sm text-red-400" role="alert">
+                  {submitError}
+                </p>
+              )}
               <button
                 type="submit"
-                className="w-full bg-white text-gray-900 py-3 rounded-lg font-medium hover:bg-gray-100 transition"
+                disabled={submitStatus === 'loading'}
+                className="w-full bg-white text-gray-900 py-3 rounded-lg font-medium hover:bg-gray-100 transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {submitStatus === 'loading' ? 'Sending…' : 'Send Message'}
               </button>
             </form>
           </div>
