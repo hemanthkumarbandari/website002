@@ -3,22 +3,31 @@ import ProductCard from '../components/ProductCard';
 import ServiceCard from '../components/ServiceCard';
 import ContactSection from '../components/ContactSection';
 
+// Import Images
+import caaqmsImg from '../assets/ASP Images Products/CAAQMS/caaqms.jpg';
+import cemsImg from '../assets/ASP Images Products/CEMs/CEMS.jpeg';
+import eqmsImg from '../assets/ASP Images Products/EQMS/eqms.jpeg';
+import portableImg from '../assets/ASP Images Products/Portable Products/product.jpeg';
+import waterImg from '../assets/ASP Images Products/Water/water.jpeg';
+import analyticalImg from '../assets/ASP Images Products/Analytical/Analytical.jpeg';
+import gcImg from '../assets/ASP Images Products/Gas Chromotagraphy/Gas chromatography.jpeg';
+
 const Home = () => {
   const products = [
-    { title: 'CAAQMS', description: 'Continuous Ambient Air Quality Monitoring System', link: '/products/caaqms', image: 'caaqms.jpg' },
-    { title: 'CEMS', description: 'Continuous Emission Monitoring Systems', link: '/products/cems', image: 'cems.jpg' },
-    { title: 'EQMS', description: 'Environmental Quality Monitoring System', link: '/products/eqms', image: 'eqms.jpg' },
-    { title: 'Portable', description: 'Portable monitoring solutions', link: '/products/portable', image: 'portable.jpg' },
-    { title: 'Water', description: 'Water quality monitoring instruments', link: '/products/water', image: 'water.jpg' },
-    { title: 'Analytical', description: 'Advanced analytical instruments', link: '/products/analytical', image: 'analytical.jpg' },
-    { title: 'Gas Chromatography', description: 'Gas chromatography systems', link: '/products/gas-chromatography', image: 'gas-chromatography.jpg' }
+    { title: 'CAAQMS', description: 'Continuous Ambient Air Quality Monitoring System', link: '/products/caaqms', image: caaqmsImg },
+    { title: 'CEMS', description: 'Continuous Emission Monitoring Systems', link: '/products/cems', image: cemsImg },
+    { title: 'EQMS', description: 'Environmental Quality Monitoring System', link: '/products/eqms', image: eqmsImg },
+    { title: 'Portable', description: 'Portable monitoring solutions', link: '/products/portable', image: portableImg },
+    { title: 'Water', description: 'Water quality monitoring instruments', link: '/products/water', image: waterImg },
+    { title: 'Analytical', description: 'Advanced analytical instruments', link: '/products/analytical', image: analyticalImg },
+    { title: 'Gas Chromatography', description: 'Gas chromatography systems', link: '/products/gas-chromatography', image: gcImg }
   ];
 
   const services = [
-    { icon: '🌬️', title: 'Ambient Air Quality Monitoring', description: 'Comprehensive monitoring of air pollutants and quality parameters.' },
-    { icon: '🏭', title: 'Continuous Emission Monitoring Systems (CEMS)', description: 'Real-time monitoring of industrial emissions and pollutants.' },
-    { icon: '💧', title: 'Water Quality Monitoring & Analysis', description: 'Advanced water quality testing and monitoring solutions.' },
-    { icon: '🔬', title: 'Gas Detection & Analytical Solutions', description: 'Specialized gas detection and analytical instrumentation.' }
+    { icon: '🌬️', title: 'Ambient Air Quality Monitoring', description: 'Comprehensive monitoring of air pollutants and quality parameters.', link: '/services' },
+    { icon: '🏭', title: 'Continuous Emission Monitoring Systems (CEMS)', description: 'Real-time monitoring of industrial emissions and pollutants.', link: '/services' },
+    { icon: '💧', title: 'Water Quality Monitoring & Analysis', description: 'Advanced water quality testing and monitoring solutions.', link: '/services' },
+    { icon: '🔬', title: 'Gas Detection & Analytical Solutions', description: 'Specialized gas detection and analytical instrumentation.', link: '/services' }
   ];
 
   return (
@@ -54,6 +63,7 @@ const Home = () => {
                 icon={service.icon}
                 title={service.title}
                 description={service.description}
+                link={service.link}
               />
             ))}
           </div>

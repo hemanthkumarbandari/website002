@@ -14,6 +14,7 @@ import AmbientAirQualityMonitoring from './pages/AmbientAirQualityMonitoring';
 import ContinuousEmissionMonitoring from './pages/ContinuousEmissionMonitoring';
 import WaterQualityMonitoring from './pages/WaterQualityMonitoring';
 import GasDetection from './pages/GasDetection';
+import DataUploading from './pages/DataUploading';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/services/continuous-emission-monitoring" element={<ContinuousEmissionMonitoring />} />
           <Route path="/services/water-quality-monitoring" element={<WaterQualityMonitoring />} />
           <Route path="/services/gas-detection" element={<GasDetection />} />
+          <Route path="/services/data-uploading" element={<DataUploading />} />
         </Routes>
       </MainLayout>
     </Router>

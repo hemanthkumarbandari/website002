@@ -1,15 +1,15 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import productsImage from '../products.jpg';
 
 const bubbleData = [
-  { size: 32, left: '8%', delay: 0, duration: 11, opacity: 0.24 },
-  { size: 48, left: '18%', delay: 2, duration: 14, opacity: 0.18 },
-  { size: 28, left: '32%', delay: 1.5, duration: 10, opacity: 0.22 },
-  { size: 40, left: '52%', delay: 0.5, duration: 12, opacity: 0.2 },
-  { size: 22, left: '70%', delay: 3, duration: 9, opacity: 0.16 },
-  { size: 36, left: '82%', delay: 1, duration: 13, opacity: 0.2 },
-  { size: 26, left: '60%', delay: 4, duration: 11.5, opacity: 0.18 },
+  { size: 32, left: '8%', delay: 0, duration: 11 },
+  { size: 48, left: '18%', delay: 2, duration: 14 },
+  { size: 28, left: '32%', delay: 1.5, duration: 10 },
+  { size: 40, left: '52%', delay: 0.5, duration: 12 },
+  { size: 22, left: '70%', delay: 3, duration: 9 },
+  { size: 36, left: '82%', delay: 1, duration: 13 },
+  { size: 26, left: '60%', delay: 4, duration: 11.5 },
 ];
 
 const Hero = () => {
@@ -18,9 +18,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden rounded-[2rem] mx-4 my-8 bg-[#CFE8DC] border border-white/40 shadow-[0_30px_120px_-60px_rgba(15,23,42,0.35)]">
+    <section className="relative overflow-hidden rounded-[2rem] mx-4 my-8 bg-[#D1F1F9] border border-white/40 shadow-[0_30px_120px_-60px_rgba(15,23,42,0.35)]">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.78),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.3),_transparent_22%)] opacity-90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.8),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.4),_transparent_25%)] opacity-90" />
         {bubbleData.map((bubble, index) => (
           <span
             key={`bubble-${index}`}
@@ -31,7 +31,6 @@ const Hero = () => {
               left: bubble.left,
               animationDelay: `${bubble.delay}s`,
               animationDuration: `${bubble.duration}s`,
-              opacity: bubble.opacity,
             }}
           />
         ))}
@@ -95,7 +94,7 @@ const Hero = () => {
 
           <div className="flex justify-center lg:justify-end">
             <motion.div
-              className="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-[#CFE8DC]"
+              className="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-[#D1F1F9]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
@@ -106,7 +105,7 @@ const Hero = () => {
                 <motion.img
                   src={productsImage}
                   alt="ASP product"
-                  className="absolute inset-0 h-full w-full object-contain mix-blend-darken brightness-95 contrast-[1.1]"
+                  className="absolute inset-0 h-full w-full object-contain mix-blend-multiply brightness-105"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
                 />
