@@ -1,66 +1,50 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
-import { useQuoteProducts } from '../hooks/useQuoteProducts';
+import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Images
-import img01 from '../assets/ASP Images Products/CEMs/01.webp';
-import img02 from '../assets/ASP Images Products/CEMs/02.webp';
-import img03 from '../assets/ASP Images Products/CEMs/03.webp';
+import img01 from '../../assets/ASP Images Products/EQMS/01.webp';
+import img02 from '../../assets/ASP Images Products/EQMS/02.webp';
 
-const CEMS = () => {
+const EQMS = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
   const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
-    'Stack Dust monitor (Dust Monitoring Unit)',
-    'Stack Gas Analysers',
-    'ASP-500 Temperature, Pressure & Flow Monitor'
+    'Organic Pollution Monitor (YUV - 3200)',
+    'OnLine TOC-380D'
   ];
 
   const products = [
     {
-      category: 'Stack Dust monitor (Dust Monitoring Unit)',
-      title: 'Stack Dust Monitor (Dust Monitoring Unit)',
-      subtitle: 'Dust and opacity monitor',
-      icon: <CloudFog className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      category: 'Organic Pollution Monitor (YUV - 3200)',
+      title: 'YUV-3200 Online BOD-COD-TSS-pH',
+      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: img01,
-      description: 'The cost-effective solution for continuous, contactless dust and opacity measurement at medium to high concentrations in dry flue and process gases.',
+      description: 'YUV-3200-organic pollution Monitor is highly advanced and excels in a wide range of applications. It employs ultraviolet (UV) spectroscopy to analyze the organic pollution levels in the sample by measuring light absorption at specific wavelengths.',
       features: [
-        'Continuous dust measurement',
-        'Contactless measurement',
-        'Automatic check functions',
-        'High-quality corrosion-free plastic housing and a wide ambient temperature range'
+        'Ultraviolet (UV) spectroscopy analysis for BOD, COD, TSS, and pH',
+        'Advanced four-path measurement method (Ureference, Vreference, Usample, Vsample)',
+        'Two wavelength method (255nm and 660nm) for superior accuracy',
+        'Unaffected by cell contamination or light source intensity changes',
+        'Real-time Determination of organic matter by signal subtraction'
       ]
     },
     {
-      category: 'Stack Gas Analysers',
-      title: 'Stack Gas Analysers',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
-      image: img02,
-      description: 'This analyzer consists of an infrared gas analyzer, an O2 sensor and a gas sampling device. It is used for simultaneous and continuous measurement of the NOx, SO2, CO, CO2 and O2 components in the flue gas of various boilers, garbage incinerators, etc. For CO and O2 measurement specifications, the function for coping with the Japanese regulation on dioxin emission is incorporated.',
-      features: [
-        'Low maintenance',
-        'Low operating cost: with no gas sampling device and few parts to be replaced',
-        'Superior long-term stability',
-        'Fast response within 2 seconds',
-        'Tolerant to high temperature and high dust'
-      ]
-    },
-    {
-      category: 'ASP-500 Temperature, Pressure & Flow Monitor',
-      title: 'Temperature, Pressure & Flow Monitor',
+      category: 'OnLine TOC-380D',
+      title: '380D Automatic OnLine TOC Analyzer',
       icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
-      image: img03,
-      description: 'ASP-500 Temperature, Pressure & Flow Monitor is designed for working condition of low flowrate (1m/s ~ 5m/s). It employs high-precision micro differential pressure/static pressure sensor and special structure design of pitot tube. Combined with automatic calibration and purge technology, it can be widely applied in real-time and continuous flue gas measurement of temperature, pressure, velocity and flow.',
+      image: img02,
+      description: 'The TOC-380D is a state-of-the-art instrument designed for managing industrial wastewater. It uses combustion oxidation and infrared analysis to measure organic pollutants rapidly and accurately, helping avoid the risk of outflow and ensuring regulatory compliance.',
       features: [
-        'High-precision micro differential/static pressure sensor',
-        'Special structure design of pitot tube for low flowrates',
-        'Automatic calibration and purge technology',
-        'Real-time and continuous flue gas measurement',
-        'Measures temperature, pressure, velocity, and flow'
+        'Advanced combustion oxidation and infrared analysis technology',
+        'Rapid measurement with a minimum interval of about 6 minutes',
+        'Measurement of a wide range of concentrations from low to high',
+        'Strong correlation with COD values by specified measurement methods',
+        'Highly accurate long-term continuous measurement'
       ]
     }
   ];
@@ -79,7 +63,7 @@ const CEMS = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">CEMS Products</span>
+              <span className="text-blue-400 font-medium">EQMS Products</span>
             </div>
           </div>
         </div>
@@ -142,17 +126,13 @@ const CEMS = () => {
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
                       <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
-                        {product.category === 'All' ? 'Product' : product.category.length > 20 ? 'CEMS' : product.category}
+                        {product.category === 'All' ? 'Product' : product.category.length > 20 ? 'EQMS' : product.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-1 leading-tight">
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">
                       {product.title}
                     </h2>
-
-                    {product.subtitle && (
-                      <h3 className="text-lg font-bold text-gray-700 mb-3">{product.subtitle}</h3>
-                    )}
                     
                     <p className="text-gray-600 text-sm leading-relaxed mb-6">
                       {product.description}
@@ -217,4 +197,4 @@ const CEMS = () => {
   );
 };
 
-export default CEMS;
+export default EQMS;

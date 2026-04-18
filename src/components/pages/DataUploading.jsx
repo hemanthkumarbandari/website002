@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Database, Check, ArrowRight } from 'lucide-react';
-import dataServiceImg from '../assets/ASP Images Products/Services.ASP Images/Data Upload and management/01.webp';
+import dataServiceImg from '../../assets/ASP Images Products/Services.ASP Images/Data Upload and management/01.webp';
 
 const DataUploading = () => {
   return (

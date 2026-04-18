@@ -1,16 +1,16 @@
-import Hero from '../components/Hero';
-import ProductCard from '../components/ProductCard';
-import ServiceCard from '../components/ServiceCard';
-import ContactSection from '../components/ContactSection';
+import Hero from '../Hero';
+import ProductCard from '../ProductCard';
+import ServiceCard from '../ServiceCard';
+import ContactSection from '../ContactSection';
 
 // Import Images
-import caaqmsImg from '../assets/ASP Images Products/CAAQMS/caaqms.jpg';
-import cemsImg from '../assets/ASP Images Products/CEMs/CEMS.jpeg';
-import eqmsImg from '../assets/ASP Images Products/EQMS/eqms.jpeg';
-import portableImg from '../assets/ASP Images Products/Portable Products/product.jpeg';
-import waterImg from '../assets/ASP Images Products/Water/water.jpeg';
-import analyticalImg from '../assets/ASP Images Products/Analytical/Analytical.jpeg';
-import gcImg from '../assets/ASP Images Products/Gas Chromotagraphy/Gas chromatography.jpeg';
+import caaqmsImg from '../../assets/ASP Images Products/CAAQMS/caaqms.jpg';
+import cemsImg from '../../assets/ASP Images Products/CEMs/CEMS.jpeg';
+import eqmsImg from '../../assets/ASP Images Products/EQMS/eqms.jpeg';
+import portableImg from '../../assets/ASP Images Products/Portable Products/product.jpeg';
+import waterImg from '../../assets/ASP Images Products/Water/water.jpeg';
+import analyticalImg from '../../assets/ASP Images Products/Analytical/Analytical.jpeg';
+import gcImg from '../../assets/ASP Images Products/Gas Chromotagraphy/Gas chromatography.jpeg';
 
 const Home = () => {
   const products = [

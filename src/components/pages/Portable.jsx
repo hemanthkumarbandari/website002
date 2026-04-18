@@ -1,34 +1,126 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
-import { useQuoteProducts } from '../hooks/useQuoteProducts';
+import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Images
-import img01 from '../assets/ASP Images Products/Analytical/Analytical.jpeg';
+import img01 from '../../assets/ASP Images Products/Portable Products/01.webp';
+import img02 from '../../assets/ASP Images Products/Portable Products/02.webp';
+import img03 from '../../assets/ASP Images Products/Portable Products/03.webp';
+import img04 from '../../assets/ASP Images Products/Portable Products/04.webp';
+import img05 from '../../assets/ASP Images Products/Portable Products/05.webp';
+import img06 from '../../assets/ASP Images Products/Portable Products/06.webp';
+import img07 from '../../assets/ASP Images Products/Portable Products/07.webp';
 
-const Analytical = () => {
+const Portable = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
   const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
-    'Analytical Instruments'
+    'Portable FTIR Stack Gas & Emission Analyser',
+    'Portable TOC / THC & NMHC Analyzer',
+    'Portable NDIR Stack Gas Analyzer',
+    'Portable Stack Gas Analyser - 4 Sensors',
+    'Portable Stack Gas Analyser - 8 Sensors',
+    'Portable Infrared Syngas Analyzer',
+    'Portable Natural Gas Analyser'
   ];
 
   const products = [
     {
-      category: 'Analytical Instruments',
-      title: 'Precision Analytical Solutions',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      category: 'Portable FTIR Stack Gas & Emission Analyser',
+      title: 'Portable FTIR Stack Gas & Emission Analyser',
+      icon: <CloudFog className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: img01,
-      description: 'We offer state-of-the-art analytical instruments designed for precise laboratory and field testing. Our analytical solutions deliver accurate, repeatable results for complex environmental, research, and industrial applications.',
+      description: 'GT6000 Mobilis is the new frontier of portable emissions monitoring. The analyzer is specifically designed for those who aim high. It enables you to concentrate on the task at hand, without interferences from hard to use, time consuming and unreliable tools.',
       features: [
-        'Unparalleled sensitivity, accuracy, and repeatability',
-        'Advanced data processing and analysis software included',
-        'Modular design allowing for easy upgrades and maintenance',
-        'Strict compliance with international testing and quality standards',
-        'Versatile configurations for various analytical methodologies'
+        'Specifically designed for high-end emissions monitoring',
+        'Concentration on tasks without tool interference',
+        'Extreme portability and robustness',
+        'Powerful analysis tools with rapid response times',
+        'Reliable performance for time-saving operations'
+      ]
+    },
+    {
+      category: 'Portable TOC / THC & NMHC Analyzer',
+      title: 'Portable TOC / THC & NMHC Analyzer',
+      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: img02,
+      description: 'The Nutech 3000 TOC (Total Organic Carbons) / THC (Total Hydrocarbons) & NMHC (Non-Methane Hydrocarbons) Analyzer is suitable for portable monitoring of TVOC (Total Volatile Organic Compounds), CH4 (Methane) and NMHC in stationary source emission and fence line.',
+      features: [
+        'Measures TVOC, CH4, and NMHC',
+        'Suitable for stationary source emission and fence line monitoring',
+        'Portable and easy to deploy',
+        'High precision for organic carbon analysis'
+      ]
+    },
+    {
+      category: 'Portable NDIR Stack Gas Analyzer',
+      title: 'Portable NDIR Stack Gas Analyzer',
+      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: img03,
+      description: 'It is portable type and used to measure concentration of SO2, NO, CO, CO2 and O2 from stack or boiler emission gases, in which SO2, NO, CO and CO2 are measured by micro-flow infrared sensors and O2 by electrochemical sensor.',
+      features: [
+        'Measures SO2, NO, CO, CO2 (NDIR) and O2 (Electrochemical)',
+        'Micro-flow infrared sensor technology',
+        'Calculates combustion efficiency and lambda',
+        'Optional sensors for temperature, pressure, and velocity'
+      ]
+    },
+    {
+      category: 'Portable Stack Gas Analyser - 4 Sensors',
+      title: 'Portable Stack Gas Analyser - 4 Sensors',
+      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: img04,
+      description: 'The IMR 1400CP is a portable Flue Gas Analyzer for commercial and industrial applications. The rugged combustion analyzer can be equipped with up to 4 sensors. Its basic unit has an O2 (Oxygen) and a CO (Carbon Monoxide) sensor.',
+      features: [
+        'Up to 4 sensors (Basic: O2 and CO)',
+        'Customer-selectable sensors and measuring ranges',
+        'Rugged design for commercial and industrial use',
+        'Measures and calculates all parameters for combustion tests'
+      ]
+    },
+    {
+      category: 'Portable Stack Gas Analyser - 8 Sensors',
+      title: 'Portable Stack Gas Analyser - 8 Sensors',
+      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: img05,
+      description: 'The IMR 2800P is a portable Flue Gas Analyzer for industrial applications. The rugged combustion analyzer can be equipped with up to 8 sensors. Its basic unit has an O2 Oxygen sensor, a CO Carbon Monoxide sensor, a NO Nitric Oxide sensor and a SO2 Sulfur Dioxide Sensor.',
+      features: [
+        'Up to 8 sensors (Basic: O2, CO, NO, SO2)',
+        'Customer-selectable sensors and measuring ranges',
+        'Rugged design for high-end industrial applications',
+        'Comprehensive emission testing and parameter calculation'
+      ]
+    },
+    {
+      category: 'Portable Infrared Syngas Analyzer',
+      title: 'Portable Infrared Syngas Analyzer',
+      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: img06,
+      description: 'Syngas (synthesis gas) is a kind of combustible gas mixture mainly generated by passing air with steam over burning coke or coal in a gasifier. This analyzer has small size, high accuracy, short response time, simple operation, and rechargeable lithium battery power supply system.',
+      features: [
+        'Measures up to 8 gases: CO, CO2, O2, CH4, CnHm, C2H3, C2H4 simultaneously',
+        'Calculates gas heating value and N2 balance automatically',
+        'Small size with high accuracy and short response time',
+        'Rechargeable lithium battery power supply',
+        'Ideal for direct pipe sampling and gas-bag analysis'
+      ]
+    },
+    {
+      category: 'Portable Natural Gas Analyser',
+      title: 'Portable Natural Gas Analyser',
+      icon: <Wind className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: img07,
+      description: 'It is a portable type analyzer that can be used to know natural gas composition and heating value in real time. Special developed CH4 sensor can give accurate CH4 reading without cross-sensitivity to other hydrocarbon content.',
+      features: [
+        'Real-time natural gas composition and heating value analysis',
+        'Accurate CH4 reading without cross-sensitivity',
+        'Unique CnHm sensor for total C2+ hydrocarbon detection',
+        'Standard configuration: CH4, CnHm, CO2, Calorific Value',
+        'Optional Wobbe Index calculation'
       ]
     }
   ];
@@ -47,7 +139,7 @@ const Analytical = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Analytical Solutions</span>
+              <span className="text-blue-400 font-medium">Portable Solutions</span>
             </div>
           </div>
         </div>
@@ -110,7 +202,7 @@ const Analytical = () => {
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
                       <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
-                        {product.category === 'All' ? 'Product' : product.category}
+                        {product.category === 'All' ? 'Product' : product.category.length > 20 ? 'Portable' : product.category}
                       </span>
                     </div>
                     
@@ -181,4 +273,4 @@ const Analytical = () => {
   );
 };
 
-export default Analytical;
+export default Portable;

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { Search, Server, CloudFog, Droplet, Database } from 'lucide-react';
 
 
-import caaqmsServiceImg from '../assets/ASP Images Products/Services.ASP Images/CAAQMS/01.webp';
-import cemsServiceImg from '../assets/ASP Images Products/Services.ASP Images/CEMS/01.webp';
-import dataServiceImg from '../assets/ASP Images Products/Services.ASP Images/Data Upload and management/01.webp';
-import eqmsServiceImg from '../assets/ASP Images Products/Services.ASP Images/EQMS/01.webp';
+import caaqmsServiceImg from '../../assets/ASP Images Products/Services.ASP Images/CAAQMS/01.webp';
+import cemsServiceImg from '../../assets/ASP Images Products/Services.ASP Images/CEMS/01.webp';
+import dataServiceImg from '../../assets/ASP Images Products/Services.ASP Images/Data Upload and management/01.webp';
+import eqmsServiceImg from '../../assets/ASP Images Products/Services.ASP Images/EQMS/01.webp';
 
 const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');

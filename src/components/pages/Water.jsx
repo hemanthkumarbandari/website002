@@ -1,25 +1,25 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
-import { useQuoteProducts } from '../hooks/useQuoteProducts';
+import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Images
-import img01 from '../assets/ASP Images Products/Water/001.webp';
-import img02 from '../assets/ASP Images Products/Water/002.webp';
-import img03 from '../assets/ASP Images Products/Water/003.webp';
-import img04 from '../assets/ASP Images Products/Water/004.webp';
-import img05 from '../assets/ASP Images Products/Water/005.webp';
-import img06 from '../assets/ASP Images Products/Water/006.webp';
-import img07 from '../assets/ASP Images Products/Water/007.webp';
-import img08 from '../assets/ASP Images Products/Water/008.webp';
-import img09 from '../assets/ASP Images Products/Water/009.webp';
-import img10 from '../assets/ASP Images Products/Water/10.webp';
-import img11 from '../assets/ASP Images Products/Water/11.webp';
-import img12 from '../assets/ASP Images Products/Water/12.webp';
-import img13 from '../assets/ASP Images Products/Water/13.webp';
-import img14 from '../assets/ASP Images Products/Water/14.webp';
-import img15 from '../assets/ASP Images Products/Water/15.webp';
-import img16 from '../assets/ASP Images Products/Water/16.webp';
+import img01 from '../../assets/ASP Images Products/Water/001.webp';
+import img02 from '../../assets/ASP Images Products/Water/002.webp';
+import img03 from '../../assets/ASP Images Products/Water/003.webp';
+import img04 from '../../assets/ASP Images Products/Water/004.webp';
+import img05 from '../../assets/ASP Images Products/Water/005.webp';
+import img06 from '../../assets/ASP Images Products/Water/006.webp';
+import img07 from '../../assets/ASP Images Products/Water/007.webp';
+import img08 from '../../assets/ASP Images Products/Water/008.webp';
+import img09 from '../../assets/ASP Images Products/Water/009.webp';
+import img10 from '../../assets/ASP Images Products/Water/10.webp';
+import img11 from '../../assets/ASP Images Products/Water/11.webp';
+import img12 from '../../assets/ASP Images Products/Water/12.webp';
+import img13 from '../../assets/ASP Images Products/Water/13.webp';
+import img14 from '../../assets/ASP Images Products/Water/14.webp';
+import img15 from '../../assets/ASP Images Products/Water/15.webp';
+import img16 from '../../assets/ASP Images Products/Water/16.webp';
 
 const Water = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');

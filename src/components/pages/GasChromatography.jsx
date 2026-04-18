@@ -1,50 +1,34 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
-import { useQuoteProducts } from '../hooks/useQuoteProducts';
+import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Images
-import img01 from '../assets/ASP Images Products/EQMS/01.webp';
-import img02 from '../assets/ASP Images Products/EQMS/02.webp';
+import img01 from '../../assets/ASP Images Products/Gas Chromotagraphy/Gas chromatography.jpeg';
 
-const EQMS = () => {
+const GasChromatography = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
   const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
-    'Organic Pollution Monitor (YUV - 3200)',
-    'OnLine TOC-380D'
+    'Gas Chromatography'
   ];
 
   const products = [
     {
-      category: 'Organic Pollution Monitor (YUV - 3200)',
-      title: 'YUV-3200 Online BOD-COD-TSS-pH',
-      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      category: 'Gas Chromatography',
+      title: 'Gas Chromatography Solutions',
+      icon: <Server className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: img01,
-      description: 'YUV-3200-organic pollution Monitor is highly advanced and excels in a wide range of applications. It employs ultraviolet (UV) spectroscopy to analyze the organic pollution levels in the sample by measuring light absorption at specific wavelengths.',
+      description: 'Our Gas Chromatography solutions offer high-resolution separation and analysis of complex volatile compounds. These highly sensitive instruments are essential for rigorous environmental testing, petrochemical analysis, and strict quality control processes.',
       features: [
-        'Ultraviolet (UV) spectroscopy analysis for BOD, COD, TSS, and pH',
-        'Advanced four-path measurement method (Ureference, Vreference, Usample, Vsample)',
-        'Two wavelength method (255nm and 660nm) for superior accuracy',
-        'Unaffected by cell contamination or light source intensity changes',
-        'Real-time Determination of organic matter by signal subtraction'
-      ]
-    },
-    {
-      category: 'OnLine TOC-380D',
-      title: '380D Automatic OnLine TOC Analyzer',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
-      image: img02,
-      description: 'The TOC-380D is a state-of-the-art instrument designed for managing industrial wastewater. It uses combustion oxidation and infrared analysis to measure organic pollutants rapidly and accurately, helping avoid the risk of outflow and ensuring regulatory compliance.',
-      features: [
-        'Advanced combustion oxidation and infrared analysis technology',
-        'Rapid measurement with a minimum interval of about 6 minutes',
-        'Measurement of a wide range of concentrations from low to high',
-        'Strong correlation with COD values by specified measurement methods',
-        'Highly accurate long-term continuous measurement'
+        'Exceptional analytical sensitivity, precision, and resolution',
+        'Wide range of available, interchangeable detectors (FID, TCD, ECD)',
+        'Intuitive, feature-rich software for advanced data analysis',
+        'Rapid heating and cooling oven designs for faster cycle times',
+        'Automated sample injection options for high-throughput laboratories'
       ]
     }
   ];
@@ -63,7 +47,7 @@ const EQMS = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">EQMS Products</span>
+              <span className="text-blue-400 font-medium">Gas Chromatography</span>
             </div>
           </div>
         </div>
@@ -126,7 +110,7 @@ const EQMS = () => {
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
                       <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
-                        {product.category === 'All' ? 'Product' : product.category.length > 20 ? 'EQMS' : product.category}
+                        {product.category === 'All' ? 'Product' : product.category}
                       </span>
                     </div>
                     
@@ -197,4 +181,4 @@ const EQMS = () => {
   );
 };
 
-export default EQMS;
+export default GasChromatography;

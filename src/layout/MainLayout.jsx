@@ -1,12 +1,13 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { AppRoutes } from '../routers/router';
 
-const MainLayout = ({ children }) => {
+const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {children}
+        <AppRoutes />
       </main>
       <Footer />
     </div>

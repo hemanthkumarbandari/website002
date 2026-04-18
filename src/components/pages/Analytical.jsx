@@ -1,34 +1,34 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
-import { useQuoteProducts } from '../hooks/useQuoteProducts';
+import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Images
-import img01 from '../assets/ASP Images Products/Gas Chromotagraphy/Gas chromatography.jpeg';
+import img01 from '../../assets/ASP Images Products/Analytical/Analytical.jpeg';
 
-const GasChromatography = () => {
+const Analytical = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
   const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
-    'Gas Chromatography'
+    'Analytical Instruments'
   ];
 
   const products = [
     {
-      category: 'Gas Chromatography',
-      title: 'Gas Chromatography Solutions',
-      icon: <Server className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      category: 'Analytical Instruments',
+      title: 'Precision Analytical Solutions',
+      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: img01,
-      description: 'Our Gas Chromatography solutions offer high-resolution separation and analysis of complex volatile compounds. These highly sensitive instruments are essential for rigorous environmental testing, petrochemical analysis, and strict quality control processes.',
+      description: 'We offer state-of-the-art analytical instruments designed for precise laboratory and field testing. Our analytical solutions deliver accurate, repeatable results for complex environmental, research, and industrial applications.',
       features: [
-        'Exceptional analytical sensitivity, precision, and resolution',
-        'Wide range of available, interchangeable detectors (FID, TCD, ECD)',
-        'Intuitive, feature-rich software for advanced data analysis',
-        'Rapid heating and cooling oven designs for faster cycle times',
-        'Automated sample injection options for high-throughput laboratories'
+        'Unparalleled sensitivity, accuracy, and repeatability',
+        'Advanced data processing and analysis software included',
+        'Modular design allowing for easy upgrades and maintenance',
+        'Strict compliance with international testing and quality standards',
+        'Versatile configurations for various analytical methodologies'
       ]
     }
   ];
@@ -47,7 +47,7 @@ const GasChromatography = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Gas Chromatography</span>
+              <span className="text-blue-400 font-medium">Analytical Solutions</span>
             </div>
           </div>
         </div>
@@ -181,4 +181,4 @@ const GasChromatography = () => {
   );
 };
 
-export default GasChromatography;
+export default Analytical;
