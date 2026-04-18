@@ -1,10 +1,23 @@
 import { useState } from 'react';
+<<<<<<< HEAD
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
+=======
+import { useQuoteProducts } from '../hooks/useQuoteProducts';
+
+const DEFAULT_QUOTE_MESSAGE = 'Hey, I would like to get Quotation for these products!';
+
+const ContactSection = () => {
+  const { quoteProducts } = useQuoteProducts();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: DEFAULT_QUOTE_MESSAGE
+>>>>>>> 3f8cd75 (2nd changes)
   });
 
   const handleChange = (e) => {
@@ -75,6 +88,19 @@ const ContactSection = () => {
                   required
                 ></textarea>
               </div>
+<<<<<<< HEAD
+=======
+              {quoteProducts.length > 0 && (
+                <div className="rounded-lg border border-gray-700 bg-gray-800/80 p-4">
+                  <p className="text-sm font-semibold mb-2">Selected products for quotation</p>
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-gray-200">
+                    {quoteProducts.map((product) => (
+                      <li key={product}>{product}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+>>>>>>> 3f8cd75 (2nd changes)
               <button
                 type="submit"
                 className="w-full bg-white text-gray-900 py-3 rounded-lg font-medium hover:bg-gray-100 transition"

@@ -1,6 +1,12 @@
 import { useState } from 'react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check, ArrowRight } from 'lucide-react';
+=======
+import { Link, useNavigate } from 'react-router-dom';
+import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
+import { useQuoteProducts } from '../hooks/useQuoteProducts';
+>>>>>>> 3f8cd75 (2nd changes)
 
 // Import Images
 import img01 from '../assets/ASP Images Products/CEMs/01.webp';
@@ -9,6 +15,11 @@ import img03 from '../assets/ASP Images Products/CEMs/03.webp';
 
 const CEMS = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+<<<<<<< HEAD
+=======
+  const navigate = useNavigate();
+  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+>>>>>>> 3f8cd75 (2nd changes)
 
   const categories = [
     'All',
@@ -170,10 +181,35 @@ const CEMS = () => {
                     )}
                     
                     <div className="mt-8 pt-6 border-t border-gray-100">
+<<<<<<< HEAD
                       <button className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm group">
                         Request Quote
                         <ArrowRight className="w-4 h-4 ml-2 text-gray-400 group-hover:text-gray-600 transition-colors" />
                       </button>
+=======
+                      <div className="flex flex-wrap items-center gap-3">
+                        <button
+                          onClick={() => addProduct(product.title)}
+                          className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm"
+                        >
+                          {isProductAdded(product.title) ? 'Added' : 'Add'}
+                        </button>
+                        <button
+                          onClick={() => navigate('/contact')}
+                          disabled={!hasProducts}
+                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+                        >
+                          Confirm
+                        </button>
+                        <button
+                          onClick={() => removeProduct(product.title)}
+                          disabled={!isProductAdded(product.title)}
+                          className="inline-flex items-center justify-center border border-red-200 text-red-600 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-red-50 transition-colors text-sm sm:ml-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+                        >
+                          Remove
+                        </button>
+                      </div>
+>>>>>>> 3f8cd75 (2nd changes)
                     </div>
                   </div>
 

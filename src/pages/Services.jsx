@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { ArrowRight, Search, Check, Server, CloudFog, Droplet, Database } from 'lucide-react';
+=======
+import { Search, Server, CloudFog, Droplet, Database } from 'lucide-react';
+>>>>>>> 3f8cd75 (2nd changes)
 
 // Import Images
 import caaqmsServiceImg from '../assets/ASP Images Products/Services.ASP Images/CAAQMS/01.webp';
@@ -146,9 +150,15 @@ const Services = () => {
                     </p>
                     
                     <div className="mt-6 pt-6 border-t border-gray-100 flex justify-center xl:justify-start">
+<<<<<<< HEAD
                       <button className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-8 rounded-full shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm group">
                         Get Quote
                       </button>
+=======
+                      <Link to="/contact" className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-8 rounded-full shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm group">
+                        Get Quote
+                      </Link>
+>>>>>>> 3f8cd75 (2nd changes)
                     </div>
                   </div>
 
