@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../components/pages/Home';
 import Services from '../components/pages/Services';
 import Contact from '../components/pages/Contact';
+import Products from '../components/pages/Products';
 import CAAQMS from '../components/pages/CAAQMS';
 import CEMS from '../components/pages/CEMS';
 import EQMS from '../components/pages/EQMS';
@@ -21,6 +22,7 @@ export function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/products" element={<Products />} />
       <Route path="/products/caaqms" element={<CAAQMS />} />
       <Route path="/products/cems" element={<CEMS />} />
       <Route path="/products/eqms" element={<EQMS />} />
