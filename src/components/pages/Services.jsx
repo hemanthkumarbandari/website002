@@ -16,7 +16,8 @@ const Services = () => {
     'CAAQMS',
     'CEMS',
     'Data Uploading and Management',
-    'EQMS'
+    'EQMS',
+    'Gas Detection'
   ];
 
   const services = [
@@ -27,6 +28,7 @@ const Services = () => {
       icon: <CloudFog className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: caaqmsServiceImg,
       description: 'The TOC-4200 is a high-performance on-line TOC analyzer, based on the proven 680°C Catalyst-aided Combustion technology. This established technology is featured in a large installed base of Shimadzu Total Organic Carbon Analyzers throughout the world, and has been applied to a broad field of industries.',
+      link: '/services/ambient-air-quality-monitoring'
     },
     {
       category: 'CEMS',
@@ -35,6 +37,7 @@ const Services = () => {
       icon: <Server className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: cemsServiceImg,
       description: 'The Online Colorimeter is a compact analytical instrumentation for online analysis and process monitoring. The colorimeter is based on a color-developing chemical reaction carried out inside the analyzer glass cell. The sample, coming from an external reservoir or process stream is autonomously grabbed by the instrument and mixed with the appropriate reagents to make the reaction happen. The analyzer uses an LED light source and a photodiode to photometrically measure the developed color intensity (absorbance). The absorbance is proportional to the concentration of the target chemical species (analyte).',
+      link: '/services/continuous-emission-monitoring'
     },
     {
       category: 'Data Uploading and Management',
@@ -43,6 +46,7 @@ const Services = () => {
       icon: <Database className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: dataServiceImg,
       description: 'We provide a data uploading and management service for the devices we offer. This service allows administrators to keep an inventory of company-owned devices, review device details, and manage access to organization data. Devices can be added to the inventory, and administrators can import device serial numbers and asset tags using a CSV file. The service also provides security features, such as encryption and data erasure, to ensure the secure transfer and storage of data.',
+      link: '/services/data-uploading'
     },
     {
       category: 'EQMS',
@@ -51,6 +55,16 @@ const Services = () => {
       icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: eqmsServiceImg,
       description: 'Online monitoring of effluents is mandatory for specific category of industries in India. However choosing right technology is important, as monitoring is not a short term job. The equipment need to be rugged, reliable (result comparable to lab data), economical, well supported by manufacturer and local distributor with inventory of spares and skilled manpower. The system shouldn\'t require recurring cost in reinvestment for replacements at a later stage. Also, the instrument need to comply Local and International Standards. We at ASP Pvt. Ltd., consider all the above points to be best choice for our customers.',
+      link: '/services/water-quality-monitoring'
+    },
+    {
+      category: 'Gas Detection',
+      title: 'Gas Detection',
+      subtitle: 'Portable and Fixed Gas Monitoring',
+      icon: <Search className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      image: caaqmsServiceImg, // Reusing an image for now if one isn't imported
+      description: 'Advanced Gas Detection systems protect personnel and facilities from hazardous, toxic, and combustible gases. Designed for both fixed installations and portable applications, these monitors provide immediate, reliable warnings to prevent critical accidents.',
+      link: '/services/gas-detection'
     }
   ];
 
@@ -146,8 +160,8 @@ const Services = () => {
                     </p>
                     
                     <div className="mt-6 pt-6 border-t border-gray-100 flex justify-center xl:justify-start">
-                      <Link to="/contact" className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-8 rounded-full shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm group">
-                        Get Quote
+                      <Link to={service.link || "/contact"} className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-8 rounded-full shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm group">
+                        View Details
                       </Link>
                     </div>
                   </div>

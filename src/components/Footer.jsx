@@ -32,8 +32,8 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
                 <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
                    <span className="font-bold text-gray-300 block mb-1 uppercase tracking-wider text-[10px]">Contact</span>
-                  <span className="font-bold text-gray-300">Mobile:</span> +91 99218-66889<br />
-                  <span className="font-bold text-gray-300">Telephone:</span> +91 40-2772
+                  <span className="font-bold text-gray-300">Mobile:</span> +91 9921866889<br />
+                  <span className="font-bold text-gray-300">Telephone:</span> +91 4027721889
                 </div>
               </div>
               <div className="flex items-start space-x-3 group">
