@@ -1,4 +1,7 @@
-import { sendContactEmails } from './contactEmail.js';
+import {
+  isEmailTransportConfigured,
+  sendContactEmails,
+} from './contactEmail.js';
 
 const MAX_LEN = { name: 200, email: 320, message: 8000 };
 
@@ -88,6 +91,10 @@ export async function handleContactPost(req, res) {
   }
 
   try {
+    if (!isEmailTransportConfigured()) {
+      return sendJson(res, 200, { ok: true, emailSkipped: true });
+    }
+
     await sendContactEmails({
       name: trimmedName,
       email: trimmedEmail,
@@ -96,15 +103,22 @@ export async function handleContactPost(req, res) {
     });
     return sendJson(res, 200, { ok: true });
   } catch (err) {
-    console.error('Contact email error:', err?.message || err);
+    const msg = String(err?.message || err);
+    console.error('Contact email error:', msg);
     if (err?.response) {
       console.error('SMTP response:', err.response);
     }
     const isDev = process.env.NODE_ENV !== 'production';
+    const gmailHint =
+      /535|534|Invalid login|Authentication failed|Application-specific password/i.test(
+        msg
+      )
+        ? ' Gmail: enable 2-Step Verification, then create an App Password (Google Account → Security → App passwords) and put that 16-character value in EMAIL_PASS (not your normal Gmail password). EMAIL_USER must be the same Gmail address. If EMAIL_FROM is set, it must be a verified "Send mail as" alias in Gmail.'
+        : '';
     return sendJson(res, 500, {
       ok: false,
       error: 'Failed to send messages',
-      ...(isDev && err?.message ? { details: err.message } : {}),
+      ...(isDev && msg ? { details: msg + gmailHint } : {}),
     });
   }
 }

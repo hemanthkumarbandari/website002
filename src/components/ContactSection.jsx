@@ -1,9 +1,20 @@
 import { useState } from 'react';
 import { useQuoteProducts } from '../hooks/useQuoteProducts';
+import {
+  CONTACT_SUBMISSIONS_TABLE,
+  getSupabaseClient,
+} from '../lib/supabaseClient';
 
 const DEFAULT_QUOTE_MESSAGE = 'Hey, I would like to get Quotation for these products!';
 
-const contactApiBase = import.meta.env.VITE_CONTACT_API_URL || '';
+/** Same-origin /api/contact: Vite plugin (vite-plugin-contact-api.js) + Vercel api/contact.js */
+function getContactEmailUrl() {
+  const explicit = import.meta.env.VITE_CONTACT_API_URL?.trim();
+  if (explicit) {
+    return `${explicit.replace(/\/$/, '')}/api/contact`;
+  }
+  return '/api/contact';
+}
 
 const ContactSection = () => {
   const { quoteProducts } = useQuoteProducts();
@@ -27,21 +38,52 @@ const ContactSection = () => {
     setSubmitStatus('loading');
     setSubmitError('');
 
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+    const supabase = getSupabaseClient();
+
+    let recorded = false;
+
     try {
-      const res = await fetch(`${contactApiBase}/api/contact`, {
+      if (supabase) {
+        const { error: dbError } = await supabase
+          .from(CONTACT_SUBMISSIONS_TABLE)
+          .insert({
+            name,
+            email,
+            message,
+            quote_products: quoteProducts,
+            status: 'new',
+          });
+
+        if (dbError) {
+          setSubmitError(
+            dbError.message || 'Could not save your message. Please try again.'
+          );
+          setSubmitStatus('error');
+          return;
+        }
+        recorded = true;
+      }
+
+      const contactEmailUrl = getContactEmailUrl();
+      const res = await fetch(contactEmailUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          message: formData.message.trim(),
-          quoteProducts
-        })
+          name,
+          email,
+          message,
+          quoteProducts,
+        }),
       });
 
       const data = await res.json().catch(() => ({}));
 
-      if (!res.ok) {
+      if (res.ok && !data.emailSkipped) {
+        recorded = true;
+      } else if (!res.ok && !recorded) {
         const hint = data.details ? ` (${data.details})` : '';
         setSubmitError(
           (data.error || 'Something went wrong. Please try again.') + hint
@@ -50,10 +92,20 @@ const ContactSection = () => {
         return;
       }
 
+      if (!recorded) {
+        setSubmitError(
+          'Contact form is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY, and set EMAIL_USER + EMAIL_PASS in .env for Gmail (optional if only saving to Supabase).'
+        );
+        setSubmitStatus('error');
+        return;
+      }
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: DEFAULT_QUOTE_MESSAGE });
     } catch {
-      setSubmitError('Network error. Please check your connection and try again.');
+      setSubmitError(
+        'Network error. Please check your connection and try again.'
+      );
       setSubmitStatus('error');
     }
   };

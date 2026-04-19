@@ -7,36 +7,68 @@ const escapeHtml = (s) =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
-const normalizeGmailPass = (raw) => {
+const normalizeSmtpPass = (raw) => {
   if (raw == null || String(raw).trim() === '') return '';
-  // App passwords are 16 chars; users often paste with spaces — Gmail expects no spaces
   return String(raw).replace(/\s/g, '');
 };
 
+export function isEmailTransportConfigured() {
+  const user = process.env.EMAIL_USER?.trim();
+  const pass = normalizeSmtpPass(process.env.EMAIL_PASS);
+  return Boolean(user && pass);
+}
+
+/**
+ * Gmail / Google Workspace SMTP (not Zoho).
+ * Use a Google "App password" (16 chars) when 2-Step Verification is on — normal passwords fail.
+ */
 const createTransporter = () => {
   const user = process.env.EMAIL_USER?.trim();
-  const pass = normalizeGmailPass(process.env.EMAIL_PASS);
+  const pass = normalizeSmtpPass(process.env.EMAIL_PASS);
   if (!user || !pass) {
     throw new Error(
-      'EMAIL_USER and EMAIL_PASS must be set in .env at the project root (see .env.example)'
+      'EMAIL_USER and EMAIL_PASS must be set in .env at the project root'
     );
   }
+
+  const portParsed = Number.parseInt(
+    process.env.EMAIL_SMTP_PORT?.trim() || '465',
+    10
+  );
+  const port = Number.isFinite(portParsed) ? portParsed : 465;
+  const secure = port === 465;
+
   return nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port,
+    secure,
     auth: { user, pass },
+    ...(!secure
+      ? {
+          requireTLS: true,
+        }
+      : {}),
   });
 };
 
-const fromAddress = () => process.env.EMAIL_FROM || process.env.EMAIL_USER;
+/**
+ * Gmail SMTP requires From to be the signed-in mailbox unless "Send mail as" is set in Gmail.
+ * We always use EMAIL_USER as the address to avoid relay / 550 errors.
+ */
+const fromEnvelope = () => {
+  const user = process.env.EMAIL_USER?.trim();
+  const name = (process.env.EMAIL_FROM_NAME || 'ASP').replace(/"/g, '').trim();
+  return `"${name}" <${user}>`;
+};
 
 const notifyAddress = () =>
-  process.env.CONTACT_NOTIFY_EMAIL || process.env.EMAIL_USER;
+  process.env.CONTACT_NOTIFY_EMAIL?.trim() || process.env.EMAIL_USER?.trim();
 
-/**
- * Thank-you email to the person who submitted the form
- */
-export const sendContactThankYouEmail = async (customerEmail, customerName) => {
-  const transporter = createTransporter();
+export const sendContactThankYouEmail = async (
+  transporter,
+  customerEmail,
+  customerName
+) => {
   const safeName = escapeHtml(customerName);
 
   const html = `
@@ -68,23 +100,17 @@ export const sendContactThankYouEmail = async (customerEmail, customerName) => {
   `;
 
   await transporter.sendMail({
-    from: fromAddress(),
+    from: fromEnvelope(),
     to: customerEmail,
     subject: 'Thank you for contacting ASP',
     html,
   });
 };
 
-/**
- * Internal notification with submission details
- */
-export const sendContactNotificationEmail = async ({
-  name,
-  email,
-  message,
-  quoteProducts,
-}) => {
-  const transporter = createTransporter();
+export const sendContactNotificationEmail = async (
+  transporter,
+  { name, email, message, quoteProducts }
+) => {
   const to = notifyAddress();
   const products = Array.isArray(quoteProducts) ? quoteProducts : [];
   const productsHtml =
@@ -123,7 +149,7 @@ export const sendContactNotificationEmail = async ({
   `;
 
   await transporter.sendMail({
-    from: fromAddress(),
+    from: fromEnvelope(),
     to,
     replyTo: email,
     subject: `Contact form: ${name}`,
@@ -132,7 +158,7 @@ export const sendContactNotificationEmail = async ({
 };
 
 export const sendContactEmails = async (payload) => {
-  // Sequential sends: parallel connections to Gmail can trigger auth/rate issues
-  await sendContactThankYouEmail(payload.email, payload.name);
-  await sendContactNotificationEmail(payload);
+  const transporter = createTransporter();
+  await sendContactThankYouEmail(transporter, payload.email, payload.name);
+  await sendContactNotificationEmail(transporter, payload);
 };
