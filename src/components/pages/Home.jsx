@@ -24,10 +24,10 @@ const Home = () => {
   ];
 
   const services = [
-    { icon: '🌬️', title: 'Ambient Air Quality Monitoring', description: 'Comprehensive monitoring of air pollutants and quality parameters.', link: '/services' },
-    { icon: '🏭', title: 'Continuous Emission Monitoring Systems (CEMS)', description: 'Real-time monitoring of industrial emissions and pollutants.', link: '/services' },
-    { icon: '💧', title: 'Water Quality Monitoring & Analysis', description: 'Advanced water quality testing and monitoring solutions.', link: '/services' },
-    { icon: '🔬', title: 'Gas Detection & Analytical Solutions', description: 'Specialized gas detection and analytical instrumentation.', link: '/services' }
+    { icon: '🌬️', title: 'Ambient Air Quality Monitoring', description: 'Comprehensive monitoring of air pollutants and quality parameters.', link: '/services/ambient-air-quality-monitoring' },
+    { icon: '🏭', title: 'Continuous Emission Monitoring Systems (CEMS)', description: 'Real-time monitoring of industrial emissions and pollutants.', link: '/services/continuous-emission-monitoring' },
+    { icon: '💧', title: 'Water Quality Monitoring & Analysis', description: 'Advanced water quality testing and monitoring solutions.', link: '/services/water-quality-monitoring' },
+    { icon: '🔬', title: 'Gas Detection & Analytical Solutions', description: 'Specialized gas detection and analytical instrumentation.', link: '/services/gas-detection' }
   ];
 
   return (
@@ -38,15 +38,21 @@ const Home = () => {
       <section id="products" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {products.map((product, index) => (
-              <ProductCard
+              <div
                 key={index}
-                image={product.image}
-                title={product.title}
-                description={product.description}
-                link={product.link}
-              />
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] xl:w-[calc(25%-1.5rem)] flex"
+              >
+                <div className="w-full">
+                  <ProductCard
+                    image={product.image}
+                    title={product.title}
+                    description={product.description}
+                    link={product.link}
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </div>

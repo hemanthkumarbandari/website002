@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,6 +8,10 @@ import { AppRoutes } from '../routers/router';
 const MainLayout = () => {
   const { pathname } = useLocation();
   const isAdminArea = pathname.startsWith('/admin');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
 
   if (isAdminArea) {
     return (
