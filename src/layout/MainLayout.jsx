@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FloatingContact from '../components/FloatingContact';
 import { AppRoutes } from '../routers/router';
 
 const MainLayout = () => {
@@ -10,6 +11,7 @@ const MainLayout = () => {
         <AppRoutes />
       </main>
       <Footer />
+      <FloatingContact />
     </div>
   );
 };
