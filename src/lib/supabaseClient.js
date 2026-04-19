@@ -19,3 +19,4 @@ export function getSupabaseClient() {
 }
 
 export const CONTACT_SUBMISSIONS_TABLE = 'contact_submissions';
+export const ADMIN_CREDENTIALS_TABLE = 'admin_credentials';

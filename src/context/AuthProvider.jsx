@@ -15,8 +15,9 @@ function readSession() {
 export function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(readSession);
 
-  const login = useCallback((username, password) => {
-    if (!validateAdminCredentials(username, password)) {
+  const login = useCallback(async (username, password) => {
+    const isValid = await validateAdminCredentials(username, password);
+    if (!isValid) {
       return false;
     }
     try {

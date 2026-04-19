@@ -1,30 +1,28 @@
-/**
- * Client-side admin gate. For production, set VITE_ADMIN_USERNAME and
- * VITE_ADMIN_PASSWORD in your environment; values are visible in the bundle.
- */
-export function getConfiguredAdminCredentials() {
-  const fromEnv = {
-    username: import.meta.env.VITE_ADMIN_USERNAME?.trim() ?? '',
-    password: import.meta.env.VITE_ADMIN_PASSWORD?.trim() ?? '',
-  };
-  if (fromEnv.username && fromEnv.password) {
-    return fromEnv;
-  }
-  if (import.meta.env.DEV) {
-    return { username: 'admin', password: 'admin' };
-  }
-  return { username: '', password: '' };
-}
-
-export function validateAdminCredentials(username, password) {
-  const expected = getConfiguredAdminCredentials();
-  if (!expected.username || !expected.password) {
-    return false;
-  }
-  return username === expected.username && password === expected.password;
-}
+import {
+  ADMIN_CREDENTIALS_TABLE,
+  getSupabaseClient,
+} from '../lib/supabaseClient';
 
 export function isAdminAuthConfigured() {
-  const { username, password } = getConfiguredAdminCredentials();
-  return Boolean(username && password);
+  return Boolean(getSupabaseClient());
+}
+
+export async function validateAdminCredentials(username, password) {
+  const supabase = getSupabaseClient();
+  const normalizedUsername = username?.trim() ?? '';
+  if (!supabase || !normalizedUsername || !password) {
+    return false;
+  }
+
+  const { data, error } = await supabase
+    .from(ADMIN_CREDENTIALS_TABLE)
+    .select('username,password')
+    .eq('username', normalizedUsername)
+    .maybeSingle();
+
+  if (error || !data) {
+    return false;
+  }
+
+  return data.password === password;
 }

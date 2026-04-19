@@ -12,6 +12,7 @@ const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const configured = isAdminAuthConfigured();
   const from = location.state?.from?.pathname;
@@ -24,22 +25,26 @@ const AdminLogin = () => {
     }
   }, [isAuthenticated, navigate, from]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setIsSubmitting(true);
     if (!configured) {
       setError(
-        'Admin sign-in is not configured. Set VITE_ADMIN_USERNAME and VITE_ADMIN_PASSWORD for production builds.'
+        'Admin sign-in is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.'
       );
+      setIsSubmitting(false);
       return;
     }
-    if (!login(username, password)) {
+    if (!(await login(username, password))) {
       setError('Invalid username or password.');
+      setIsSubmitting(false);
       return;
     }
     navigate(from && from !== '/admin/login' ? from : '/admin', {
       replace: true,
     });
+    setIsSubmitting(false);
   };
 
   return (
@@ -113,9 +118,10 @@ const AdminLogin = () => {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full py-3 rounded-xl font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-0.5 transition-all duration-200"
             >
-              Sign in
+              {isSubmitting ? 'Signing in...' : 'Sign in'}
             </button>
           </form>
 
