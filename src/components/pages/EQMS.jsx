@@ -63,7 +63,9 @@ const EQMS = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">EQMS Products</span>
+              <Link to="/products" className="hover:text-white transition-colors">Products</Link>
+              <span>/</span>
+              <span className="text-blue-400 font-medium">EQMS</span>
             </div>
           </div>
         </div>

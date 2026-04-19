@@ -1,22 +1,96 @@
 import { Link } from 'react-router-dom';
+import { CloudFog, Check, ArrowRight } from 'lucide-react';
+import bgImg from '../../assets/ASP Images Products/CAAQMS/001.webp';
 
 const AmbientAirQualityMonitoring = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16">
-      <Link to="/" className="text-blue-600 hover:text-blue-800 mb-8 inline-block">&larr; Back to Home</Link>
-      <h1 className="text-4xl font-bold text-gray-900 mb-6">Ambient Air Quality Monitoring</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Our Ambient Air Quality Monitoring systems provide comprehensive tracking of atmospheric conditions and pollutant levels. These solutions help ensure public safety and compliance with environmental regulations in urban and industrial areas.
-      </p>
-      <div className="bg-gray-100 p-8 rounded-2xl">
-        <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>High-precision sensors for multiple environmental parameters</li>
-          <li>Real-time data logging, visualization, and cloud connectivity</li>
-          <li>Robust build for diverse and harsh weather conditions</li>
-          <li>Automated calibration and built-in self-diagnostics</li>
-          <li>Compliance with local and global environmental standards</li>
-        </ul>
+    <div className="bg-[#f8f9fa] min-h-screen pb-24 font-sans text-gray-800">
+      {/* Top Header - Dark Minimal */}
+      <div className="bg-[#0f172a] text-white pt-24 pb-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-start">
+            <h1 className="text-4xl font-bold mb-4 tracking-tight">Ambient Air Quality Monitoring</h1>
+            <div className="flex items-center space-x-2 text-sm text-gray-400">
+              <Link to="/" className="hover:text-white transition-colors">Home</Link>
+              <span>/</span>
+              <Link to="/services" className="hover:text-white transition-colors">Services</Link>
+              <span>/</span>
+              <span className="text-blue-400 font-medium">CAAQMS Services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
+        <div className="bg-white rounded-2xl flex flex-col xl:flex-row shadow-sm border border-gray-100 overflow-hidden">
+          
+          {/* Minimalist Image Box */}
+          <div className="w-full xl:w-[450px] bg-[#f8fafc] flex flex-col items-center justify-center flex-shrink-0 self-stretch relative">
+            <div className="w-full h-full p-8 flex items-center justify-center">
+              <img src={bgImg} alt="Ambient Air Quality Monitoring" className="max-w-full max-h-full object-contain mix-blend-multiply" />
+            </div>
+            <div className="absolute bottom-6 w-full text-center">
+              <span className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">
+                CAAQMS Solutions
+              </span>
+            </div>
+          </div>
+
+          {/* Clean Content Area */}
+          <div className="flex-1 p-8 lg:p-12 flex flex-col">
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+                <CloudFog className="w-8 h-8 text-blue-600" />
+              </div>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 leading-tight">
+                Ambient Air Quality Monitoring Services
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                Our Ambient Air Quality Monitoring systems provide comprehensive tracking of atmospheric conditions and pollutant levels. These solutions help ensure public safety and compliance with environmental regulations in urban and industrial areas.
+              </p>
+            </div>
+
+            <div className="space-y-6 flex-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-2" />
+                    High-precision sensors
+                  </h4>
+                  <p className="text-sm text-gray-600">Accurately measure multiple environmental parameters simultaneously.</p>
+                </div>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-2" />
+                    Real-time data logging
+                  </h4>
+                  <p className="text-sm text-gray-600">Continuous visualization and seamless cloud connectivity for data tracking.</p>
+                </div>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-2" />
+                    Robust Build
+                  </h4>
+                  <p className="text-sm text-gray-600">Built to withstand diverse and harsh weather conditions effectively.</p>
+                </div>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                  <h4 className="font-bold text-gray-900 mb-2 flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-2" />
+                    Automated calibration
+                  </h4>
+                  <p className="text-sm text-gray-600">Built-in self-diagnostics to maintain accuracy and compliance.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-gray-100">
+              <Link to="/contact" className="inline-flex items-center justify-center bg-[#2563eb] text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all transform hover:-translate-y-1 group">
+                Request Service Details
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

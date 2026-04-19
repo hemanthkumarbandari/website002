@@ -5,6 +5,7 @@ import AdminGuard from '../components/AdminGuard';
 const Home = lazy(() => import('../components/pages/Home'));
 const Services = lazy(() => import('../components/pages/Services'));
 const Contact = lazy(() => import('../components/pages/Contact'));
+const Products = lazy(() => import('../components/pages/Products'));
 const CAAQMS = lazy(() => import('../components/pages/CAAQMS'));
 const CEMS = lazy(() => import('../components/pages/CEMS'));
 const EQMS = lazy(() => import('../components/pages/EQMS'));
@@ -43,6 +44,7 @@ export function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/products/caaqms" element={<CAAQMS />} />
         <Route path="/products/cems" element={<CEMS />} />
         <Route path="/products/eqms" element={<EQMS />} />
