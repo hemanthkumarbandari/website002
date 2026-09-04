@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import footerBg from '../assets/footer-bg.png';
+import aspLogo from '../assets/ASP_Logo.png';
 
 const Footer = () => {
   return (
@@ -76,11 +77,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Big Brand Identifier */}
+          {/* Brand Logo Plaque */}
           <div className="flex flex-col items-center justify-center lg:items-end">
-            <div className="relative p-12 border border-white/10 rounded-[2rem] bg-white/5 backdrop-blur-xl group-hover:bg-white/10 transition-all duration-700 shadow-2xl">
-                <span className="text-7xl font-black text-white/5 tracking-[0.25em] select-none group-hover:text-white/10 transition-all duration-700">ASP</span>
-                <div className="absolute inset-0 bg-blue-500/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+            <div className="relative p-6 sm:p-8 border border-white/10 rounded-[2rem] bg-white/5 backdrop-blur-xl group-hover:bg-white/10 transition-all duration-700 shadow-2xl flex items-center justify-center">
+              <div className="bg-white rounded-2xl p-5 shadow-lg flex items-center justify-center max-w-[240px] sm:max-w-[280px]">
+                <img
+                  src={aspLogo}
+                  alt="ASP - Environmental & Analytical Supplies"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="absolute inset-0 bg-blue-500/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
             </div>
           </div>
 

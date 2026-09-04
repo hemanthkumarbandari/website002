@@ -80,6 +80,44 @@ const Services = () => {
       </div>
 
       <div className="mt-24">
+        {/* Annual & Comprehensive Services — AMC Description */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-10 lg:p-14 flex flex-col justify-center">
+                <span className="inline-block px-3 py-0.5 bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest rounded-full mb-4 w-fit">
+                  Annual Maintenance Contract
+                </span>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Annual & Comprehensive Services</h2>
+                <p className="text-gray-400 text-sm mb-6">For AAQMS / CEMS / SPM / Effluent Monitoring / VOC / Online Water Quality / Online Air Quality / Analytical Instruments</p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    'Maintenance of Analyzers',
+                    'Calibration as per manufacturer\'s guidelines & schedule',
+                    'Maintenance of LED Display boards',
+                    'Supply of required spares',
+                    'Data Connectivity to CPCB/SPCB cloud servers',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-1.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-slate-950 text-white font-semibold px-8 py-3 text-sm hover:bg-slate-800 transition-colors w-fit"
+                >
+                  Get a Quote
+                </Link>
+              </div>
+              <div
+                className="min-h-[300px] bg-cover bg-center"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop')" }}
+              />
+            </div>
+          </div>
+        </div>
         <ContactSection />
       </div>
     </div>

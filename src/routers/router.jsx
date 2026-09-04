@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import AdminGuard from '../components/AdminGuard';
 
 const Home = lazy(() => import('../components/pages/Home'));
+const About = lazy(() => import('../components/pages/About'));
 const Services = lazy(() => import('../components/pages/Services'));
 const Contact = lazy(() => import('../components/pages/Contact'));
 const Products = lazy(() => import('../components/pages/Products'));
@@ -14,6 +15,19 @@ const Water = lazy(() => import('../components/pages/Water'));
 const Analytical = lazy(() => import('../components/pages/Analytical'));
 const GasChromatography = lazy(() =>
   import('../components/pages/GasChromatography')
+);
+const GeneralPurposeGC = lazy(() =>
+  import('../components/pages/GeneralPurposeGC')
+);
+const ProcessGC = lazy(() => import('../components/pages/ProcessGC'));
+const LabGC = lazy(() => import('../components/pages/LabGC'));
+const MedicalGC = lazy(() => import('../components/pages/MedicalGC'));
+const EnvironmentalGC = lazy(() =>
+  import('../components/pages/EnvironmentalGC')
+);
+const AttachmentGC = lazy(() => import('../components/pages/AttachmentGC'));
+const AirQualityMonitoring = lazy(() =>
+  import('../components/pages/AirQualityMonitoring')
 );
 const AmbientAirQualityMonitoring = lazy(() =>
   import('../components/pages/AmbientAirQualityMonitoring')
@@ -42,6 +56,7 @@ export function AppRoutes() {
     <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
@@ -55,6 +70,40 @@ export function AppRoutes() {
           path="/products/gas-chromatography"
           element={<GasChromatography />}
         />
+        <Route path="/products/air" element={<AirQualityMonitoring />} />
+        <Route
+          path="/products/analytical/general-purpose"
+          element={<GeneralPurposeGC />}
+        />
+        <Route
+          path="/products/analytical/process"
+          element={<ProcessGC />}
+        />
+        <Route path="/products/analytical/lab" element={<LabGC />} />
+        <Route
+          path="/products/analytical/medical"
+          element={<MedicalGC />}
+        />
+        <Route
+          path="/products/analytical/environmental"
+          element={<EnvironmentalGC />}
+        />
+        <Route
+          path="/products/analytical/attachment"
+          element={<AttachmentGC />}
+        />
+        {/* Legacy reference route aliases */}
+        <Route path="/caaqms" element={<CAAQMS />} />
+        <Route path="/cems" element={<CEMS />} />
+        <Route path="/eqms" element={<EQMS />} />
+        <Route path="/air" element={<AirQualityMonitoring />} />
+        <Route path="/water" element={<Water />} />
+        <Route path="/purpose" element={<GeneralPurposeGC />} />
+        <Route path="/process" element={<ProcessGC />} />
+        <Route path="/lab" element={<LabGC />} />
+        <Route path="/medical" element={<MedicalGC />} />
+        <Route path="/environ" element={<EnvironmentalGC />} />
+        <Route path="/attach" element={<AttachmentGC />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
           path="/admin/dashboard"

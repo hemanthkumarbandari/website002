@@ -1,51 +1,81 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
+import { Wind, Check, Search } from 'lucide-react';
 import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
-// Import Images
-import img01 from '../../assets/ASP Images Products/Analytical/Analytical.jpeg';
-import cgc001Img from '../../assets/products/purpose/cgc001_p.jpg';
-import jlp104Img from '../../assets/products/process/jlp104.png';
-import gc206Img from '../../assets/products/lab/gc206_p.jpg';
-import eogImg from '../../assets/products/medical/eog_p.jpg';
-import rgm1Img from '../../assets/products/environ/rgm1_p.jpg';
-import jc2000Img from '../../assets/products/attach/jc2000_p.png';
+const categories = [
+  'All',
+  'Nitrogen Oxide/Oxygen Automatic Measuring Device',
+  'Nitrogen Oxide Automatic Measuring Instrument',
+  'Automatic Oxygen Measuring Device',
+  'Ethylene Analyzer',
+];
 
-const Analytical = () => {
+const products = [
+  {
+    category: 'Nitrogen Oxide/Oxygen Automatic Measuring Device',
+    title: 'Nitrogen Oxide/Oxygen Automatic Measuring Device',
+    image: 'https://storage.googleapis.com/studio-cms-assets/projects/1pqDwe1bOj/s-1200x1200_v-fms_webp_ddee72ac-6f29-4002-b80a-527e1df61f6d_small.webp',
+    description:
+      'This measuring instrument is a lightweight and easy-to-maintain model of the previous model, which has been well-received for its high reliability. It is equipped with a highly stable reduced pressure NOx analyzer that uses bypass flow chopping gas analysis and a magnetic force O₂ analyzer that combines flow chopping gas analysis, making it ideal for long-term continuous measurement.',
+    features: [
+      'Highly stable reduced pressure NOx analyzer using bypass flow chopping gas analysis.',
+      'Magnetic force O₂ analyzer combining flow chopping gas analysis.',
+      'Ideal for long-term continuous measurement.',
+      'USB memory function available as an option for easy data collection.',
+    ],
+  },
+  {
+    category: 'Nitrogen Oxide Automatic Measuring Instrument',
+    title: 'Nitrogen Oxide Automatic Measuring Instrument',
+    image: 'https://storage.googleapis.com/studio-cms-assets/projects/1pqDwe1bOj/s-1200x1200_v-fms_webp_17a6e21c-7629-41c5-9da3-1b54f43161f4_small.webp',
+    description:
+      'Research on NOx is diverse, from environmental air and flue gas to the human body and living organisms. This measuring instrument is equipped with a wide range of analytical modes and a wide range of applications as standard to meet the needs of various NOx research.',
+    features: [
+      'Wide range of analytical modes to meet diverse NOx research needs.',
+      'Flow chopping mode (FC) for analyses requiring stability.',
+      'Continuous mode (CONT.) for analyses requiring fast response.',
+    ],
+  },
+  {
+    category: 'Automatic Oxygen Measuring Device',
+    title: 'Automatic Oxygen Measuring Device',
+    image: 'https://storage.googleapis.com/studio-cms-assets/projects/1pqDwe1bOj/s-1200x1200_v-fms_webp_8877a0e9-af0c-49dc-9ee4-f9771b02b0d4_small.webp',
+    description:
+      'An integrated automatic oxygen measuring instrument with built-in pre-processing for dust removal and dehumidification. The detection section combines a flow chopping gas analysis method and a magnetic force sensor, enabling high-precision long-term continuous measurement.',
+    features: [
+      'Built-in pre-processing for dust removal and dehumidification.',
+      'Flow chopping gas analysis + magnetic force sensor for high-precision measurement.',
+      'Almost no effect from coexisting gases.',
+      'Wide linear range from low to high concentrations.',
+      'USB memory function and various options for easy data collection.',
+    ],
+  },
+  {
+    category: 'Ethylene Analyzer',
+    title: 'Ethylene Analyzer',
+    image: 'https://storage.googleapis.com/studio-cms-assets/projects/1pqDwe1bOj/s-1200x1200_v-fms_webp_137fd49c-96c5-4b7f-9b68-4c7e827ce2e8_small.webp',
+    description:
+      'A chemiluminescence type ethylene analyzer that utilizes the chemiluminescence of ethylene and ozone. By incorporating proprietary premixing type CLD (registered utility model) technology, it can continuously and sensitively measure the concentration of ethylene emitted from fruits and vegetables.',
+    features: [
+      'Chemiluminescence detection of ethylene and ozone reactions.',
+      'Proprietary premixing type CLD (registered utility model) technology.',
+      'Continuous, sensitive measurement of ethylene from fruits and vegetables.',
+    ],
+  },
+];
+
+const AirQualityMonitoring = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
   const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
 
-  const categories = [
-    'All',
-    'Analytical Instruments'
-  ];
-
-  const products = [
-    {
-      category: 'Analytical Instruments',
-      title: 'Precision Analytical Solutions',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
-      image: img01,
-      description: 'We offer state-of-the-art analytical instruments designed for precise laboratory and field testing. Our analytical solutions deliver accurate, repeatable results for complex environmental, research, and industrial applications.',
-      features: [
-        'Unparalleled sensitivity, accuracy, and repeatability',
-        'Advanced data processing and analysis software included',
-        'Modular design allowing for easy upgrades and maintenance',
-        'Strict compliance with international testing and quality standards',
-        'Versatile configurations for various analytical methodologies'
-      ]
-    }
-  ];
-
-  const filteredProducts = selectedCategory === 'All' 
-    ? products 
-    : products.filter(p => p.category === selectedCategory);
+  const filteredProducts =
+    selectedCategory === 'All' ? products : products.filter((p) => p.category === selectedCategory);
 
   return (
     <div className="bg-[#f8f9fa] min-h-screen pb-24 font-sans text-gray-800">
-      {/* Top Header - Dark Minimal */}
+      {/* Top Header */}
       <div className="bg-[#0f172a] text-white pt-24 pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-start">
@@ -55,7 +85,7 @@ const Analytical = () => {
               <span>/</span>
               <Link to="/products" className="hover:text-white transition-colors">Products</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Analytical</span>
+              <span className="text-blue-400 font-medium">Online Air Quality Monitoring</span>
             </div>
           </div>
         </div>
@@ -63,12 +93,11 @@ const Analytical = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
         <div className="flex flex-col lg:flex-row gap-8">
-          
-          {/* Sidebar - Clean & Minimal */}
+          {/* Sidebar */}
           <div className="w-full lg:w-72 flex-shrink-0">
             <div className="bg-[#f8f9fa] rounded-2xl sticky top-8">
               <div className="pt-4 pb-6 px-4">
-                <h3 className="text-xl font-bold text-gray-900">Categories</h3>
+                <h3 className="text-xl font-bold text-gray-900">Air</h3>
               </div>
               <div className="space-y-1">
                 {categories.map((category, index) => {
@@ -84,9 +113,7 @@ const Analytical = () => {
                       }`}
                     >
                       <span className="truncate pr-2">{category}</span>
-                      {isSelected && (
-                        <div className="w-1.5 h-1.5 rounded-full bg-white/80 flex-shrink-0"></div>
-                      )}
+                      {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-white/80 flex-shrink-0" />}
                     </button>
                   );
                 })}
@@ -94,59 +121,27 @@ const Analytical = () => {
             </div>
           </div>
 
-          {/* Product List Content */}
+          {/* Product List */}
           <div className="flex-1 space-y-8 pb-12">
-
-            {/* Analytical 6-Card Category Grid matching Screenshot 1 */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-[#0079bf] tracking-tight">Analytical Sub-Categories</h3>
-                <div className="mt-2 h-0.5 w-16 bg-[#0079bf] rounded-full" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { label: 'General-purpose', image: cgc001Img, link: '/products/analytical/general-purpose' },
-                  { label: 'Process', image: jlp104Img, link: '/products/analytical/process' },
-                  { label: 'Lab Use', image: gc206Img, link: '/products/analytical/lab' },
-                  { label: 'Medical', image: eogImg, link: '/products/analytical/medical' },
-                  { label: 'Environmental', image: rgm1Img, link: '/products/analytical/environmental' },
-                  { label: 'Attachment', image: jc2000Img, link: '/products/analytical/attachment' },
-                ].map((sub, i) => (
-                  <div
-                    key={i}
-                    className="bg-white rounded-xl border border-[#d97706] p-4 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300 group"
-                  >
-                    <div className="w-full bg-[#edf2f7] rounded-lg h-44 flex items-center justify-center p-3 mb-4 overflow-hidden">
-                      <img
-                        src={sub.image}
-                        alt={sub.label}
-                        className="max-h-36 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="w-full flex justify-center pt-1">
-                      <Link
-                        to={sub.link}
-                        className="px-5 py-1.5 text-sm font-medium text-[#0079bf] border border-[#0079bf] rounded-md hover:bg-[#0079bf] hover:text-white transition-colors text-center"
-                      >
-                        {sub.label}
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-white rounded-2xl flex flex-col xl:flex-row shadow-sm border border-gray-100 overflow-hidden"
                 >
-                  {/* Minimalist Image Box */}
-                  <div className="w-full xl:w-[350px] bg-[#f8fafc] flex flex-col items-center justify-center flex-shrink-0 self-stretch relative">
-                    <div className="w-full h-full p-4 flex items-center justify-center">
-                      <img src={product.image} alt={product.title} className="max-w-full max-h-full object-contain mix-blend-multiply" />
-                    </div>
+                  {/* Image Box */}
+                  <div className="w-full xl:w-[350px] bg-[#f8fafc] flex flex-col items-center justify-center flex-shrink-0 self-stretch relative min-h-[220px]">
+                    {product.image ? (
+                      <div className="w-full h-full p-4 flex items-center justify-center">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="max-w-full max-h-[200px] object-contain mix-blend-multiply"
+                        />
+                      </div>
+                    ) : (
+                      <Wind className="w-24 h-24 text-blue-200" strokeWidth={1} />
+                    )}
                     <div className="absolute bottom-4 w-full text-center">
                       <span className="text-[10px] font-bold text-gray-400 tracking-widest uppercase">
                         {product.title.split(' ')[0]} {product.title.split(' ')[1] || ''}
@@ -154,22 +149,17 @@ const Analytical = () => {
                     </div>
                   </div>
 
-                  {/* Clean Content Area */}
+                  {/* Content */}
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
                       <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
-                        {product.category === 'All' ? 'Product' : product.category}
+                        Online Air Quality
                       </span>
                     </div>
-                    
                     <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">
                       {product.title}
                     </h2>
-                    
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                      {product.description}
-                    </p>
-                    
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{product.description}</p>
                     {product.features && product.features.length > 0 && (
                       <div className="mb-8 flex-1">
                         <h4 className="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Key Specifications</h4>
@@ -183,7 +173,6 @@ const Analytical = () => {
                         </ul>
                       </div>
                     )}
-                    
                     <div className="mt-8 pt-6 border-t border-gray-100">
                       <div className="flex flex-wrap items-center gap-3">
                         <button
@@ -195,21 +184,20 @@ const Analytical = () => {
                         <button
                           onClick={() => navigate('/contact')}
                           disabled={!hasProducts}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          Confirm
+                          Get Quote
                         </button>
                         <button
                           onClick={() => removeProduct(product.title)}
                           disabled={!isProductAdded(product.title)}
-                          className="inline-flex items-center justify-center border border-red-200 text-red-600 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-red-50 transition-colors text-sm sm:ml-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent"
+                          className="inline-flex items-center justify-center border border-red-200 text-red-600 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-red-50 transition-colors text-sm sm:ml-auto disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           Remove
                         </button>
                       </div>
                     </div>
                   </div>
-
                 </div>
               ))
             ) : (
@@ -222,11 +210,10 @@ const Analytical = () => {
               </div>
             )}
           </div>
-
         </div>
       </div>
     </div>
   );
 };
 
-export default Analytical;
+export default AirQualityMonitoring;

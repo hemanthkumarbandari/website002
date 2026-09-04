@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import TrustedBy from '../components/TrustedBy';
 import FloatingContact from '../components/FloatingContact';
 import { AppRoutes } from '../routers/router';
 
@@ -27,6 +28,7 @@ const MainLayout = () => {
       <main className="flex-grow">
         <AppRoutes />
       </main>
+      <TrustedBy />
       <Footer />
       <FloatingContact />
     </div>
