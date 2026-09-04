@@ -6,8 +6,6 @@ import ASPlogo from '../../ASPlogo.jpg';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
-  const [mobileEnvOpen, setMobileEnvOpen] = useState(false);
-  const [mobileAnaOpen, setMobileAnaOpen] = useState(false);
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">

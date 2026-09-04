@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Activity, Wind, CloudFog, Server, FlaskConical, Droplet, Search, Check } from 'lucide-react';
+import { Search, Check } from 'lucide-react';
 import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Product Images
