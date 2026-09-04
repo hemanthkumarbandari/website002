@@ -22,11 +22,6 @@ const Navbar = () => {
 
           {/* Center Menu - Desktop */}
           <div className="hidden md:flex space-x-8 items-center h-full">
-            <div className="py-5 flex items-center">
-              <Link to="/about" className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors h-full">
-                About
-              </Link>
-            </div>
 
             {/* Products Dropdown */}
             <div 
@@ -129,7 +124,6 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden border-t border-gray-100 py-3 space-y-2 bg-white">
-            <Link to="/about" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">About</Link>
             
             <div>
               <div className="flex items-center justify-between px-3 py-2">

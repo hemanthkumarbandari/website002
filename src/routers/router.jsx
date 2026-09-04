@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import AdminGuard from '../components/AdminGuard';
 
 const Home = lazy(() => import('../components/pages/Home'));
-const About = lazy(() => import('../components/pages/About'));
 const Services = lazy(() => import('../components/pages/Services'));
 const Contact = lazy(() => import('../components/pages/Contact'));
 const Products = lazy(() => import('../components/pages/Products'));
@@ -56,7 +55,6 @@ export function AppRoutes() {
     <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
