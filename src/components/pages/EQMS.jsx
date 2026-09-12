@@ -22,7 +22,6 @@ const EQMS = () => {
     {
       category: 'Organic Pollution Monitor (YUV - 3200)',
       title: 'YUV-3200 Online BOD-COD-TSS-pH',
-      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: img01,
       description: 'YUV-3200-organic pollution Monitor is highly advanced and excels in a wide range of applications. It employs ultraviolet (UV) spectroscopy to analyze the organic pollution levels in the sample by measuring light absorption at specific wavelengths.',
       features: [
@@ -36,7 +35,6 @@ const EQMS = () => {
     {
       category: 'OnLine TOC-380D',
       title: '380D Automatic OnLine TOC Analyzer',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
       image: img02,
       description: 'The TOC-380D is a state-of-the-art instrument designed for managing industrial wastewater. It uses combustion oxidation and infrared analysis to measure organic pollutants rapidly and accurately, helping avoid the risk of outflow and ensuring regulatory compliance.',
       features: [

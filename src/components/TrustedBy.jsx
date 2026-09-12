@@ -55,16 +55,16 @@ const TrustedBy = () => {
         <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-        <div className="animate-marquee flex items-center gap-8 sm:gap-12 py-4">
+        <div className="animate-marquee flex items-center gap-10 sm:gap-14 py-4">
           {marqueeItems.map((client, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-44 sm:w-52 h-24 bg-white flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300"
+              className="flex-shrink-0 w-48 sm:w-60 h-28 bg-white flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={client.logo}
                 alt={client.name}
-                className="max-w-full max-h-16 object-contain"
+                className="max-w-full max-h-20 object-contain"
                 loading="lazy"
               />
             </div>

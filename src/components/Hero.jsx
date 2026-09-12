@@ -14,7 +14,7 @@ const bubbleData = [
 
 const Hero = () => {
   const scrollToProducts = () => {
-    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('environmental')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

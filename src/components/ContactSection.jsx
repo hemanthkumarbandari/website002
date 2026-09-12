@@ -111,57 +111,57 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left: Our Identity */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Identity</h2>
-            <p className="text-lg text-gray-700 mb-4">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Identity</h2>
+            <p className="text-base sm:text-lg text-gray-700 mb-4">
               ASP is a leading provider of environmental instrumentation solutions, dedicated to helping organizations monitor and manage environmental impact effectively.
             </p>
-            <p className="text-lg text-gray-700">
+            <p className="text-base sm:text-lg text-gray-700">
               With years of experience and cutting-edge technology, we deliver reliable, accurate, and innovative monitoring systems for air quality, emissions, and water quality.
             </p>
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-gray-900 text-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-2xl font-semibold mb-6">Contact Us</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-gray-900 text-white rounded-2xl shadow-lg p-6 sm:p-8 w-full min-w-0">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-5 sm:mb-6">Contact Us</h3>
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-1.5">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-sm"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-1.5">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-sm"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-1.5">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-sm resize-none"
                   required
                 ></textarea>
               </div>
@@ -188,7 +188,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={submitStatus === 'loading'}
-                className="w-full bg-white text-gray-900 py-3 rounded-lg font-medium hover:bg-gray-100 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full bg-white text-gray-900 py-3 rounded-lg font-medium hover:bg-gray-100 transition disabled:opacity-60 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 {submitStatus === 'loading' ? 'Sending…' : 'Send Message'}
               </button>
