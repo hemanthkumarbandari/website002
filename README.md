@@ -19,17 +19,6 @@ npm run build
 
 ```
 ASPwebsite/
-├── .agents/                        # AI agent skills & configuration
-│   └── skills/
-│       ├── design-md/              # Stitch design system synthesis skill
-│       ├── enhance-prompt/         # Prompt enhancement skill
-│       ├── react-components/       # Stitch → React components skill
-│       ├── remotion/               # Walkthrough video generation skill
-│       ├── shadcn-ui/              # shadcn/ui integration skill
-│       ├── stitch-design/          # Unified Stitch design entry skill
-│       ├── stitch-loop/            # Iterative website building skill
-│       └── taste-design/           # Semantic design system skill
-│
 ├── public/                         # Static assets served as-is
 │   ├── favicon.svg
 │   └── icons.svg
@@ -91,19 +80,3 @@ ASPwebsite/
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **Linting**: ESLint
-
-## 🤖 AI Skills (`.agents/skills/`)
-
-This project includes 8 Stitch AI agent skills from [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills):
-
-| Skill | Purpose |
-|---|---|
-| `stitch-design` | Unified entry point for Stitch design work |
-| `stitch-loop` | Iteratively build multi-page websites from a single prompt |
-| `design-md` | Analyze Stitch projects and generate `DESIGN.md` files |
-| `enhance-prompt` | Transform vague UI ideas into polished Stitch-optimized prompts |
-| `react-components` | Convert Stitch designs into modular React components |
-| `remotion` | Generate walkthrough videos from Stitch projects |
-| `shadcn-ui` | Expert guidance for shadcn/ui integration |
-| `taste-design` | Semantic design system enforcing premium UI standards |
-

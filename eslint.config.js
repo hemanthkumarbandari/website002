@@ -8,8 +8,6 @@ export default defineConfig([
   globalIgnores([
     'dist',
     'node_modules',
-    '.agents/**',
-    '.claude/**',
   ]),
   {
     files: ['server/**/*.js', 'api/**/*.js', 'vite-plugin-contact-api.js'],
