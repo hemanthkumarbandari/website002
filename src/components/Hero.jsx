@@ -61,12 +61,16 @@ const Hero = () => {
               Protecting what you can’t see, preserving what you love.
             </motion.p>
             <motion.p
-              className="text-lg md:text-xl text-slate-700 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-base md:text-lg text-slate-700 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
             >
-              Leading provider of advanced environmental instrumentation solutions for air quality, emissions, and water monitoring.
+              Leading provider of advanced{' '}
+              <span className="font-semibold text-slate-900">Analytical Instrumentation</span>{' '}
+              for Process, Quality, R&amp;D &amp; Lab applications, along with{' '}
+              <span className="font-semibold text-slate-900">Pollution Monitoring (Environmental) Instrumentation</span>{' '}
+              — covering Continuous Ambient Air Quality, Continuous Emission, and Continuous Water Quality monitoring analyzers.
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"

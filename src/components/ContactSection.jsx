@@ -17,7 +17,7 @@ function getContactEmailUrl() {
 }
 
 const ContactSection = () => {
-  const { quoteProducts } = useQuoteProducts();
+  const { quoteProducts, removeProduct } = useQuoteProducts();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -168,9 +168,25 @@ const ContactSection = () => {
               {quoteProducts.length > 0 && (
                 <div className="rounded-lg border border-gray-700 bg-gray-800/80 p-4">
                   <p className="text-sm font-semibold mb-2">Selected products for quotation</p>
-                  <ul className="list-disc pl-5 space-y-1 text-sm text-gray-200">
+                  <ul className="space-y-1.5">
                     {quoteProducts.map((product) => (
-                      <li key={product}>{product}</li>
+                      <li key={product} className="flex items-center justify-between gap-2 text-sm text-gray-200">
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                          {product}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => removeProduct(product)}
+                          className="flex-shrink-0 w-5 h-5 rounded-full bg-gray-700 hover:bg-red-500/80 text-gray-400 hover:text-white flex items-center justify-center transition-colors duration-200"
+                          aria-label={`Remove ${product}`}
+                          title="Remove"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-2.5 h-2.5">
+                            <path d="M2 2l10 10M12 2L2 12" />
+                          </svg>
+                        </button>
+                      </li>
                     ))}
                   </ul>
                 </div>
