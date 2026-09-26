@@ -13,9 +13,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="/" className="inline-flex items-center">
+          <Link to="/" className="inline-flex items-center">
               <img src={ASPlogo} alt="ASP Logo" className="h-10 md:h-14 lg:h-16 object-contain" />
-            </a>
+            </Link>
           </div>
 
           {/* Center Menu - Desktop */}
@@ -97,10 +97,10 @@ const Navbar = () => {
             </div>
 
             <div className="py-5 flex items-center">
-              <a href="/services" className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center h-full">Services</a>
+              <Link to="/services" className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center h-full">Services</Link>
             </div>
             <div className="py-5 flex items-center">
-              <a href="/contact" className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center h-full">Contact Us</a>
+              <Link to="/contact" className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center h-full">Contact Us</Link>
             </div>
           </div>
 
@@ -145,8 +145,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a href="/services" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Services</a>
-            <a href="/contact" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+            <Link to="/services" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Services</Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Contact Us</Link>
             <div className="pt-2 px-3">
               <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition w-full block text-center">
                 Contact Sales

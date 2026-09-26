@@ -49,6 +49,7 @@ export default defineConfig([
         'error',
         { varsIgnorePattern: '^([A-Z_].*|motion)$' },
       ],
+      'no-undef': 'error',
     },
   },
 ])

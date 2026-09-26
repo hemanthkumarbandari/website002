@@ -7,12 +7,22 @@ import FloatingContact from '../components/FloatingContact';
 import { AppRoutes } from '../routers/router';
 
 const MainLayout = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const isAdminArea = pathname.startsWith('/admin');
 
   useEffect(() => {
+    if (hash) {
+      // Give lazy-loaded page time to mount before attempting scroll
+      const id = setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 400);
+      return () => clearTimeout(id);
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   if (isAdminArea) {
     return (

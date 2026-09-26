@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Check } from 'lucide-react';
+import { Search, Check, Server } from 'lucide-react';
 import { useQuoteProducts } from '../../hooks/useQuoteProducts';
 
 // Import Images
@@ -141,25 +141,40 @@ const GasChromatography = () => {
                     <div className="mt-8 pt-6 border-t border-gray-100">
                       <div className="flex flex-wrap items-center gap-3">
                         <button
-                          onClick={() => addProduct(product.title)}
-                          className="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-900 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:border-gray-300 hover:bg-gray-50 transition-colors text-sm"
+                          onClick={() => {
+                            if (isProductAdded(product.title)) {
+                              removeProduct(product.title);
+                            } else {
+                              addProduct(product.title);
+                            }
+                          }}
+                          className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
+                            isProductAdded(product.title)
+                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
+                          }`}
                         >
-                          {isProductAdded(product.title) ? 'Added' : 'Add'}
+                          {isProductAdded(product.title) ? '✓ Added' : '+ Add to Quote'}
                         </button>
                         <button
-                          onClick={() => navigate('/contact')}
-                          disabled={!hasProducts}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+                          onClick={() => {
+                            if (!isProductAdded(product.title)) {
+                              addProduct(product.title);
+                            }
+                            navigate('/contact');
+                          }}
+                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
                         >
-                          Confirm
+                          Get Quote
                         </button>
-                        <button
-                          onClick={() => removeProduct(product.title)}
-                          disabled={!isProductAdded(product.title)}
-                          className="inline-flex items-center justify-center border border-red-200 text-red-600 font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-red-50 transition-colors text-sm sm:ml-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent"
-                        >
-                          Remove
-                        </button>
+                        {isProductAdded(product.title) && (
+                          <button
+                            onClick={() => removeProduct(product.title)}
+                            className="inline-flex items-center justify-center border border-red-200 text-red-600 font-semibold py-2.5 px-4 rounded-xl shadow-sm hover:bg-red-50 transition-colors text-sm sm:ml-auto cursor-pointer"
+                          >
+                            Remove
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

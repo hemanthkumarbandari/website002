@@ -1,12 +1,15 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider';
+import { QuoteProductsProvider } from './context/QuoteProductsProvider';
 import MainLayout from './layout/MainLayout';
 
 function App() {
   return (
     <Router>
       <AuthProvider>
-        <MainLayout />
+        <QuoteProductsProvider>
+          <MainLayout />
+        </QuoteProductsProvider>
       </AuthProvider>
     </Router>
   );

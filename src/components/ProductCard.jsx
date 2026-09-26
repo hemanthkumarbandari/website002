@@ -2,15 +2,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const ProductCard = ({ image, title, description, link }) => {
-  // Check if image is an actual path or just a placeholder name
-  const isImagePath = image && (image.startsWith('/') || image.includes('.webp') || image.includes('.png') || image.includes('.jpg'));
+  const hasImage = Boolean(image && typeof image === 'string' && (image.startsWith('/') || image.startsWith('http') || image.startsWith('data:') || /\.(webp|png|jpe?g|svg|avif|gif)(\?.*)?$/i.test(image) || image.includes('/assets/')));
 
   return (
     <Link to={link} className="block group">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-500 transform hover:-translate-y-2 overflow-hidden flex flex-col h-full">
         <div className="relative h-56 bg-[#f8fafc] flex items-center justify-center overflow-hidden">
           {/* Image container with smooth zoom on hover */}
-          {isImagePath ? (
+          {hasImage ? (
             <div className="w-full h-full p-6 flex items-center justify-center">
               <img 
                 src={image} 
@@ -19,7 +18,9 @@ const ProductCard = ({ image, title, description, link }) => {
               />
             </div>
           ) : (
-            <span className="text-gray-400 text-sm font-medium tracking-wide">Image: {image}</span>
+            <div className="w-full h-full flex items-center justify-center p-6 text-center">
+              <span className="text-gray-400 text-sm font-medium tracking-wide">{title}</span>
+            </div>
           )}
           
           {/* Hover Overlay */}
