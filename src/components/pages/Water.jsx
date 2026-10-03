@@ -24,7 +24,7 @@ import img16 from '../../assets/ASP Images Products/Water/16.webp';
 const Water = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
-  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+  const { addProduct, removeProduct, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
@@ -39,7 +39,7 @@ const Water = () => {
     {
       category: 'COD / TOC Analyzers',
       title: 'Automatic COD Analyzer COD-380R',
-      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Droplet className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img01,
       description: 'This is an automated device that measures COD (chemical oxygen consumption), an important parameter for understanding the water quality of river water or industrial wastewater, based on the Japanese Industrial Standard JIS K0102.',
       features: [
@@ -53,7 +53,7 @@ const Water = () => {
     {
       category: 'Nitrogen / Phosphorus Analyzers',
       title: 'Automatic Total Phosphorus/Total Nitrogen Analyzer TPN-580/TPN-580R',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img02,
       description: 'An automated device that measures total phosphorus and total nitrogen, important indicators for understanding water quality in river water or industrial wastewater.',
       features: [
@@ -67,7 +67,7 @@ const Water = () => {
     {
       category: 'Nitrogen / Phosphorus Analyzers',
       title: 'Automatic Total Nitrogen Analyzer TN-310',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img03,
       description: 'The automatic total nitrogen measuring device uses the "contact pyrolysis/chemiluminescence method" adopted in JIS K0102 for continuous monitoring.',
       features: [
@@ -81,7 +81,7 @@ const Water = () => {
     {
       category: 'Specialty Analyzers',
       title: 'Automatic Phosphate Ion Analyzer PHS-580i',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img04,
       description: 'Fully automates the "molybdenum blue absorptiometry" method for understanding phosphate ion concentration in wastewater and boiler water.',
       features: [
@@ -95,7 +95,7 @@ const Water = () => {
     {
       category: 'Specialty Analyzers',
       title: 'Automatic Hydrazine Analyzer HZ-680',
-      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Droplet className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img05,
       description: 'A fully automated hydrazine measurement device based on JIS B8224, ideal for monitoring dissolved oxygen reducing agents in boiler systems.',
       features: [
@@ -109,7 +109,7 @@ const Water = () => {
     {
       category: 'Specialty Analyzers',
       title: 'Automatic Silica Analyzer SIO-780',
-      icon: <Search className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Search className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img06,
       description: 'Fully automated silica measurement system designed for boiler maintenance and ion exchange equipment monitoring.',
       features: [
@@ -123,7 +123,7 @@ const Water = () => {
     {
       category: 'Heavy Metals / Cyanide Analyzers',
       title: 'Automatic Total Cyanogen Analyzer TCN-580',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img07,
       description: 'Measures cyanide using distillation and pyridine pyrazolone absorptiometry as specified in JIS K0102, providing labor-saving automated analysis.',
       features: [
@@ -137,7 +137,7 @@ const Water = () => {
     {
       category: 'Ion / Nutrient Analyzers',
       title: 'Automatic Ion Analyzer CN-180',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img08,
       description: 'Fully automates measurement using an ion electrode after sample pretreatment, designed for public water areas and industrial wastewater.',
       features: [
@@ -151,7 +151,7 @@ const Water = () => {
     {
       category: 'Ion / Nutrient Analyzers',
       title: 'Automatic Ammonia Analyzer NH-180',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img09,
       description: 'Advanced ammonia measurement device utilizing ion electrode technology for precise monitoring in public and industrial water systems.',
       features: [
@@ -165,7 +165,7 @@ const Water = () => {
     {
       category: 'Ion / Nutrient Analyzers',
       title: 'Automatic Fluorin Ion Analyzer FLO-180',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img10,
       description: 'Specialized ion analyzer for fluorine monitoring, featuring automated pretreatment and high-precision electrode measurement.',
       features: [
@@ -179,7 +179,7 @@ const Water = () => {
     {
       category: 'Heavy Metals / Cyanide Analyzers',
       title: 'Automatic Mercury Analyzer HGM-180',
-      icon: <Search className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Search className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img11,
       description: 'Measures inorganic mercury by reduction vapor atomic absorption spectrometry, capable of detecting extremely low concentrations.',
       features: [
@@ -193,7 +193,7 @@ const Water = () => {
     {
       category: 'Specialty Analyzers',
       title: 'Automatic Phenol Analyzer PNL-780 / PNL-780D',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img12,
       description: 'Fully automated phenol measurement using the 4-aminoantipyrine spectrophotometric method, with distillation options available.',
       features: [
@@ -207,7 +207,7 @@ const Water = () => {
     {
       category: 'Heavy Metals / Cyanide Analyzers',
       title: 'Automatic Hexavalent Chromium Analyzer CR-680',
-      icon: <Search className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Search className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img13,
       description: 'Fully automates the diphenylcarbazide absorptiometry method for hexavalent chromium, suitable for a wide range of industrial applications.',
       features: [
@@ -221,7 +221,7 @@ const Water = () => {
     {
       category: 'Heavy Metals / Cyanide Analyzers',
       title: 'Automatic Total Chromium Analyzer TCR-680',
-      icon: <Search className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Search className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img14,
       description: 'Fully automates total chromium measurement using diphenylcarbazide spectrophotometry after chemical reaction and heating, as per JIS standards.',
       features: [
@@ -235,7 +235,7 @@ const Water = () => {
     {
       category: 'Specialty Analyzers',
       title: 'Automatic Hydrogenperoxide Analyzer HOA-280',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img15,
       description: 'A fully automated version of the potassium permanganate titration method for controlled measurement of hydrogen peroxide.',
       features: [
@@ -249,7 +249,7 @@ const Water = () => {
     {
       category: 'Specialty Analyzers',
       title: 'Automatic SVI Analyzer SVI-708',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img16,
       description: 'Simultaneously measures critical aeration tank parameters (MLSS, SV, SVI) to optimize sewage treatment plant operations.',
       features: [
@@ -278,7 +278,7 @@ const Water = () => {
               <span>/</span>
               <Link to="/products" className="hover:text-white transition-colors">Products</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Water Quality Monitoring</span>
+              <span className="text-[#0078BF] font-medium">Water Quality Monitoring</span>
             </div>
           </div>
         </div>
@@ -302,7 +302,7 @@ const Water = () => {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-5 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#2563eb] text-white'
+                          ? 'bg-[#0078BF] text-white'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                     >
@@ -340,12 +340,12 @@ const Water = () => {
                   {/* Clean Content Area */}
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
+                      <span className="inline-block px-2.5 py-0.5 bg-[#0078BF]/10 text-[#0078BF] text-[10px] font-bold uppercase tracking-wider rounded-full">
                         {product.category === 'All' ? 'Product' : product.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#0078BF] mb-3 leading-tight">
                       {product.title}
                     </h2>
                     
@@ -379,7 +379,7 @@ const Water = () => {
                           }}
                           className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
                             isProductAdded(product.title)
-                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              ? 'bg-[#0078BF]/10 border border-[#0078BF]/40 text-[#0078BF] hover:bg-[#0078BF]/20'
                               : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
@@ -392,7 +392,7 @@ const Water = () => {
                             }
                             navigate('/contact');
                           }}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
+                          className="inline-flex items-center justify-center bg-[#0078BF] border border-[#0078BF] text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-[#0066a3] transition-colors text-sm cursor-pointer"
                         >
                           Get Quote
                         </button>

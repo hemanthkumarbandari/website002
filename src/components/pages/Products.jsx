@@ -95,7 +95,7 @@ const SectionHeading = ({ title, subtitle }) => (
   <div className="mb-10">
     <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight mb-2">{title}</h2>
     {subtitle && <p className="text-gray-500 text-sm max-w-2xl">{subtitle}</p>}
-    <div className="mt-3 h-1 w-20 bg-blue-600 rounded-full" />
+    <div className="mt-3 h-1 w-20 bg-[#0078BF] rounded-full" />
   </div>
 );
 
@@ -120,7 +120,7 @@ const Products = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Products</span>
+              <span className="text-[#0078BF] font-medium">Products</span>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@ const Products = () => {
           {/* Gas Chromatography System Banner */}
           <div className="mt-12 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center space-x-5">
-              <div className="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center p-2 flex-shrink-0">
+              <div className="w-20 h-20 bg-[#0078BF]/10 rounded-xl flex items-center justify-center p-2 flex-shrink-0">
                 <img src={gcImg} alt="Gas Chromatography" className="max-h-full max-w-full object-contain" />
               </div>
               <div>
@@ -180,7 +180,7 @@ const Products = () => {
             </div>
             <Link
               to="/products/gas-chromatography"
-              className="px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors shadow-sm hover:shadow whitespace-nowrap"
+              className="px-6 py-3 text-sm font-semibold text-white bg-[#0078BF] rounded-xl hover:bg-[#0066a3] transition-colors shadow-sm hover:shadow whitespace-nowrap"
             >
               Explore GC Systems
             </Link>

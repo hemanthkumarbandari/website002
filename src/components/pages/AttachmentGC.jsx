@@ -75,7 +75,7 @@ const products = [
 const AttachmentGC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
-  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+  const { addProduct, removeProduct, isProductAdded } = useQuoteProducts();
 
   const filteredProducts =
     selectedCategory === 'All' ? products : products.filter((p) => p.category === selectedCategory);
@@ -93,7 +93,7 @@ const AttachmentGC = () => {
               <span>/</span>
               <Link to="/products/analytical" className="hover:text-white transition-colors">Analytical</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Attachment</span>
+              <span className="text-[#0078BF] font-medium">Attachment</span>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ const AttachmentGC = () => {
                       key={index}
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-5 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
-                        isSelected ? 'bg-[#2563eb] text-white' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                        isSelected ? 'bg-[#0078BF] text-white' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                     >
                       <span className="truncate pr-2">{category}</span>
@@ -138,16 +138,16 @@ const AttachmentGC = () => {
                         className="max-w-full max-h-[200px] object-contain mix-blend-multiply"
                       />
                     ) : (
-                      <div className="w-24 h-24 rounded-full bg-blue-50 flex items-center justify-center">
-                        <span className="text-blue-300 text-4xl">⚡</span>
+                      <div className="w-24 h-24 rounded-full bg-[#0078BF]/10 flex items-center justify-center">
+                        <span className="text-[#0078BF] text-4xl">⚡</span>
                       </div>
                     )}
                   </div>
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">Attachment</span>
+                      <span className="inline-block px-2.5 py-0.5 bg-[#0078BF]/10 text-[#0078BF] text-[10px] font-bold uppercase tracking-wider rounded-full">Attachment</span>
                     </div>
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">{product.title}</h2>
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#0078BF] mb-3 leading-tight">{product.title}</h2>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6">{product.description}</p>
                     {product.features && (
                       <div className="mb-8 flex-1">
@@ -174,7 +174,7 @@ const AttachmentGC = () => {
                           }}
                           className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
                             isProductAdded(product.title)
-                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              ? 'bg-[#0078BF]/10 border border-[#0078BF]/40 text-[#0078BF] hover:bg-[#0078BF]/20'
                               : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
@@ -187,7 +187,7 @@ const AttachmentGC = () => {
                             }
                             navigate('/contact');
                           }}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
+                          className="inline-flex items-center justify-center bg-[#0078BF] border border-[#0078BF] text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-[#0066a3] transition-colors text-sm cursor-pointer"
                         >
                           Get Quote
                         </button>

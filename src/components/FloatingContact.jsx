@@ -7,7 +7,7 @@ const FloatingContact = () => {
       {/* Email Button */}
       <a
         href="mailto:support@aspinstruments.co.in"
-        className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:bg-blue-700 hover:scale-110 transition-all duration-300 group relative"
+        className="w-14 h-14 bg-[#0078BF] rounded-full flex items-center justify-center text-white shadow-[0_4px_14px_0_rgba(0,120,191,0.39)] hover:bg-[#0066a3] hover:scale-110 transition-all duration-300 group relative"
         aria-label="Email Us"
       >
         <Mail className="w-6 h-6" />

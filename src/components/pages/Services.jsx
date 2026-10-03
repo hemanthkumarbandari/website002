@@ -60,7 +60,7 @@ const Services = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Services</span>
+              <span className="text-[#0078BF] font-medium">Services</span>
             </div>
           </div>
         </div>
@@ -87,20 +87,20 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: dark content panel */}
             <div className="bg-[#0A1932] p-8 sm:p-12 flex flex-col justify-center">
-              <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-widest rounded-full mb-5 w-fit border border-blue-500/30">
+              <span className="inline-block px-3 py-1 bg-[#0078BF]/20 text-[#0078BF] text-xs font-bold uppercase tracking-widest rounded-full mb-5 w-fit border border-[#0078BF]/30">
                 Annual Maintenance Contract
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 leading-snug">
                 Annual &amp; Comprehensive Services
               </h2>
-              <p className="text-blue-200/70 text-sm mb-7 leading-relaxed">
+              <p className="text-white/70 text-sm mb-7 leading-relaxed">
                 For AAQMS / CEMS / SPM / Effluent Monitoring / VOC / Online Water Quality / Online Air Quality / Analytical Instruments
               </p>
               <ul className="space-y-3 mb-8">
                 {amcFeatures.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-300 text-sm">
-                    <span className="w-5 h-5 rounded-full bg-blue-500/20 border border-blue-400/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-2.5 h-2.5 text-blue-400" fill="currentColor" viewBox="0 0 8 8">
+                    <span className="w-5 h-5 rounded-full bg-[#0078BF]/20 border border-[#0078BF]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-2.5 h-2.5 text-[#0078BF]" fill="currentColor" viewBox="0 0 8 8">
                         <circle cx="4" cy="4" r="3" />
                       </svg>
                     </span>
@@ -110,7 +110,7 @@ const Services = () => {
               </ul>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white text-[#0A1932] font-semibold px-7 py-3 text-sm hover:bg-blue-50 transition-colors w-fit shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full bg-white text-[#0A1932] font-semibold px-7 py-3 text-sm hover:bg-[#0078BF]/10 transition-colors w-fit shadow-sm"
               >
                 Get a Quote
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

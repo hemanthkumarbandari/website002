@@ -61,7 +61,7 @@ const TrustedBy = () => {
   return (
     <section className="py-14 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#0079bf] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#0078BF] tracking-tight">
           Our Clientele
         </h2>
         <p className="mt-2 text-sm text-gray-500 max-w-2xl mx-auto">
@@ -88,7 +88,7 @@ const TrustedBy = () => {
                   loading="lazy"
                 />
               </div>
-              <span className="mt-2 text-xs font-semibold text-gray-700 tracking-wide text-center truncate max-w-full group-hover:text-[#0079bf] transition-colors">
+              <span className="mt-2 text-xs font-semibold text-gray-700 tracking-wide text-center truncate max-w-full group-hover:text-[#0078BF] transition-colors">
                 {client.name}
               </span>
             </div>

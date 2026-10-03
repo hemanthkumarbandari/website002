@@ -9,7 +9,7 @@ import img01 from '../../assets/ASP Images Products/Gas Chromotagraphy/Gas chrom
 const GasChromatography = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
-  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+  const { addProduct, removeProduct, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
@@ -20,7 +20,7 @@ const GasChromatography = () => {
     {
       category: 'Gas Chromatography',
       title: 'Gas Chromatography Solutions',
-      icon: <Server className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Server className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img01,
       description: 'Our Gas Chromatography solutions offer high-resolution separation and analysis of complex volatile compounds. These highly sensitive instruments are essential for rigorous environmental testing, petrochemical analysis, and strict quality control processes.',
       features: [
@@ -49,7 +49,7 @@ const GasChromatography = () => {
               <span>/</span>
               <Link to="/products" className="hover:text-white transition-colors">Products</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Gas Chromatography</span>
+              <span className="text-[#0078BF] font-medium">Gas Chromatography</span>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ const GasChromatography = () => {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-5 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#2563eb] text-white'
+                          ? 'bg-[#0078BF] text-white'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                     >
@@ -111,12 +111,12 @@ const GasChromatography = () => {
                   {/* Clean Content Area */}
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
+                      <span className="inline-block px-2.5 py-0.5 bg-[#0078BF]/10 text-[#0078BF] text-[10px] font-bold uppercase tracking-wider rounded-full">
                         {product.category === 'All' ? 'Product' : product.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#0078BF] mb-3 leading-tight">
                       {product.title}
                     </h2>
                     
@@ -150,7 +150,7 @@ const GasChromatography = () => {
                           }}
                           className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
                             isProductAdded(product.title)
-                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              ? 'bg-[#0078BF]/10 border border-[#0078BF]/40 text-[#0078BF] hover:bg-[#0078BF]/20'
                               : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
@@ -163,7 +163,7 @@ const GasChromatography = () => {
                             }
                             navigate('/contact');
                           }}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
+                          className="inline-flex items-center justify-center bg-[#0078BF] border border-[#0078BF] text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-[#0066a3] transition-colors text-sm cursor-pointer"
                         >
                           Get Quote
                         </button>

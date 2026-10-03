@@ -11,7 +11,7 @@ import img03 from '../../assets/ASP Images Products/CEMs/03.webp';
 const CEMS = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
-  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+  const { addProduct, removeProduct, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
@@ -25,7 +25,7 @@ const CEMS = () => {
       category: 'Stack Dust monitor (Dust Monitoring Unit)',
       title: 'Stack Dust Monitor (Dust Monitoring Unit)',
       subtitle: 'Dust and opacity monitor',
-      icon: <CloudFog className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <CloudFog className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img01,
       description: 'The cost-effective solution for continuous, contactless dust and opacity measurement at medium to high concentrations in dry flue and process gases.',
       features: [
@@ -38,7 +38,7 @@ const CEMS = () => {
     {
       category: 'Stack Gas Analysers',
       title: 'Stack Gas Analysers',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img02,
       description: 'This analyzer consists of an infrared gas analyzer, an O2 sensor and a gas sampling device. It is used for simultaneous and continuous measurement of the NOx, SO2, CO, CO2 and O2 components in the flue gas of various boilers, garbage incinerators, etc. For CO and O2 measurement specifications, the function for coping with the Japanese regulation on dioxin emission is incorporated.',
       features: [
@@ -52,7 +52,7 @@ const CEMS = () => {
     {
       category: 'ASP-500 Temperature, Pressure & Flow Monitor',
       title: 'Temperature, Pressure & Flow Monitor',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img03,
       description: 'ASP-500 Temperature, Pressure & Flow Monitor is designed for working condition of low flowrate (1m/s ~ 5m/s). It employs high-precision micro differential pressure/static pressure sensor and special structure design of pitot tube. Combined with automatic calibration and purge technology, it can be widely applied in real-time and continuous flue gas measurement of temperature, pressure, velocity and flow.',
       features: [
@@ -81,7 +81,7 @@ const CEMS = () => {
               <span>/</span>
               <Link to="/products" className="hover:text-white transition-colors">Products</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">CEMS</span>
+              <span className="text-[#0078BF] font-medium">CEMS</span>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ const CEMS = () => {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-5 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#2563eb] text-white'
+                          ? 'bg-[#0078BF] text-white'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                     >
@@ -143,12 +143,12 @@ const CEMS = () => {
                   {/* Clean Content Area */}
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
+                      <span className="inline-block px-2.5 py-0.5 bg-[#0078BF]/10 text-[#0078BF] text-[10px] font-bold uppercase tracking-wider rounded-full">
                         {product.category === 'All' ? 'Product' : product.category.length > 20 ? 'CEMS' : product.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-1 leading-tight">
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#0078BF] mb-1 leading-tight">
                       {product.title}
                     </h2>
 
@@ -186,7 +186,7 @@ const CEMS = () => {
                           }}
                           className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
                             isProductAdded(product.title)
-                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              ? 'bg-[#0078BF]/10 border border-[#0078BF]/40 text-[#0078BF] hover:bg-[#0078BF]/20'
                               : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
@@ -199,7 +199,7 @@ const CEMS = () => {
                             }
                             navigate('/contact');
                           }}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
+                          className="inline-flex items-center justify-center bg-[#0078BF] border border-[#0078BF] text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-[#0066a3] transition-colors text-sm cursor-pointer"
                         >
                           Get Quote
                         </button>

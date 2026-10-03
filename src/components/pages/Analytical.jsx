@@ -15,7 +15,7 @@ import jc2000Img from '../../assets/products/attach/jc2000_p.png';
 const Analytical = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
-  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+  const { addProduct, removeProduct, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
@@ -26,7 +26,7 @@ const Analytical = () => {
     {
       category: 'Analytical Instruments',
       title: 'Precision Analytical Solutions',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: img01,
       description: 'We offer state-of-the-art analytical instruments designed for precise laboratory and field testing. Our analytical solutions deliver accurate, repeatable results for complex environmental, research, and industrial applications.',
       features: [
@@ -55,7 +55,7 @@ const Analytical = () => {
               <span>/</span>
               <Link to="/products" className="hover:text-white transition-colors">Products</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Analytical</span>
+              <span className="text-[#0078BF] font-medium">Analytical</span>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ const Analytical = () => {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-5 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#2563eb] text-white'
+                          ? 'bg-[#0078BF] text-white'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                     >
@@ -100,8 +100,8 @@ const Analytical = () => {
             {/* Analytical 6-Card Category Grid matching Screenshot 1 */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-[#0079bf] tracking-tight">Analytical Sub-Categories</h3>
-                <div className="mt-2 h-0.5 w-16 bg-[#0079bf] rounded-full" />
+                <h3 className="text-2xl font-bold text-[#0078BF] tracking-tight">Analytical Sub-Categories</h3>
+                <div className="mt-2 h-0.5 w-16 bg-[#0078BF] rounded-full" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
@@ -126,7 +126,7 @@ const Analytical = () => {
                     <div className="w-full flex justify-center pt-1">
                       <Link
                         to={sub.link}
-                        className="px-5 py-1.5 text-sm font-medium text-[#0079bf] border border-[#0079bf] rounded-md hover:bg-[#0079bf] hover:text-white transition-colors text-center"
+                        className="px-5 py-1.5 text-sm font-medium text-[#0078BF] border border-[#0078BF] rounded-md hover:bg-[#0078BF] hover:text-white transition-colors text-center"
                       >
                         {sub.label}
                       </Link>
@@ -157,12 +157,12 @@ const Analytical = () => {
                   {/* Clean Content Area */}
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
+                      <span className="inline-block px-2.5 py-0.5 bg-[#0078BF]/10 text-[#0078BF] text-[10px] font-bold uppercase tracking-wider rounded-full">
                         {product.category === 'All' ? 'Product' : product.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#0078BF] mb-3 leading-tight">
                       {product.title}
                     </h2>
                     
@@ -196,7 +196,7 @@ const Analytical = () => {
                           }}
                           className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
                             isProductAdded(product.title)
-                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              ? 'bg-[#0078BF]/10 border border-[#0078BF]/40 text-[#0078BF] hover:bg-[#0078BF]/20'
                               : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
@@ -209,7 +209,7 @@ const Analytical = () => {
                             }
                             navigate('/contact');
                           }}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
+                          className="inline-flex items-center justify-center bg-[#0078BF] border border-[#0078BF] text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-[#0066a3] transition-colors text-sm cursor-pointer"
                         >
                           Get Quote
                         </button>

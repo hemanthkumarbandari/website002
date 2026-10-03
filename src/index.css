@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --color-blue-50: #f0f7fc;
+  --color-blue-100: #dbebfa;
+  --color-blue-200: #b8daf4;
+  --color-blue-300: #7ebfed;
+  --color-blue-400: #3ba0e4;
+  --color-blue-500: #0078BF;
+  --color-blue-600: #0078BF;
+  --color-blue-700: #0066a3;
+  --color-blue-800: #005487;
+  --color-blue-900: #00436d;
+  --color-blue-950: #002c49;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;

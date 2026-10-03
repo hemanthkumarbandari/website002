@@ -19,7 +19,7 @@ import systemImg11 from '../../assets/ASP Images Products/CAAQMS/011.webp';
 const CAAQMS = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
-  const { addProduct, removeProduct, hasProducts, isProductAdded } = useQuoteProducts();
+  const { addProduct, removeProduct, isProductAdded } = useQuoteProducts();
 
   const categories = [
     'All',
@@ -40,7 +40,7 @@ const CAAQMS = () => {
     {
       category: 'Monitoring System',
       title: 'Continuous Ambient Air Quality Monitoring System (CAAQMS)',
-      icon: <Server className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Server className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg1,
       description: 'On-Line Continuous Ambient Air Monitoring System / Station for the measurement of SO2, NOx, CO, CO2, O3, PM10, PM2.5 etc. in the ambient environment.',
       features: [
@@ -52,7 +52,7 @@ const CAAQMS = () => {
     {
       category: 'PM2.5 Analyzer',
       title: 'PM2.5 Analyzer',
-      icon: <CloudFog className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <CloudFog className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg2,
       description: 'The Spirant™ BAM 1100 automatically measures and records airborne particulate concentrations using the beta ray attenuation method. It is designated by the US EPA as Federal Equivalent Method for PM2.5 monitoring.',
       features: []
@@ -60,7 +60,7 @@ const CAAQMS = () => {
     {
       category: 'PM10 Analyzer',
       title: 'PM10 Analyzer',
-      icon: <CloudFog className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <CloudFog className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg3,
       description: 'The Spirant™ BAM 1000 automatically measures and records airborne particulate concentrations using the beta ray attenuation method. It is designated by the US EPA as Federal Equivalent Method for PM10 monitoring.',
       features: []
@@ -68,7 +68,7 @@ const CAAQMS = () => {
     {
       category: 'SO2 Analyzer',
       title: 'SO2 Analyzer',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg4,
       description: 'The Serinus® 50 sulfur dioxide (SO2) analyser delivers precise and reliable performance at excellent value. It uses proven pulsed UV fluorescent radiation technology to measure SO2 in ambient air (LDL < 0.3 ppb, range 0 to 20 ppm).',
       features: []
@@ -76,7 +76,7 @@ const CAAQMS = () => {
     {
       category: 'NOx Analyzer',
       title: 'NOx Analyzer',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg5,
       description: 'The Serinus® 40 Oxides of Nitrogen (NOx) analyser delivers precise and reliable performance at excellent value. It uses proven chemiluminescence technology to measure NO, NO2 and NOx in ambient air (LDL < 0.4 ppb, range 0 to 20 ppm).',
       features: []
@@ -84,7 +84,7 @@ const CAAQMS = () => {
     {
       category: 'CO Analyzer',
       title: 'CO Analyzer',
-      icon: <Wind className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Wind className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg6,
       description: 'The Serinus® 30 carbon monoxide (CO) analyser delivers precise and reliable performance at excellent value. It uses proven NDIR gas filter correlation technology to measure CO in ambient air (LDL < 40 ppb, range 0 to 200 ppm).',
       features: []
@@ -92,7 +92,7 @@ const CAAQMS = () => {
     {
       category: 'O3 Analyzer',
       title: 'O3 Analyzer',
-      icon: <Wind className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Wind className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg7,
       description: 'The Serinus® 10 Ozone (O3) analyser delivers precise and reliable performance at excellent value. It uses proven non-dispersive ultraviolet (UV) absorption technology to measure O3 in ambient air (LDL < 0.5 ppb, range 0 to 20 ppm).',
       features: []
@@ -100,7 +100,7 @@ const CAAQMS = () => {
     {
       category: 'NH3 Analyzer',
       title: 'NH3 Analyzer',
-      icon: <FlaskConical className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <FlaskConical className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg8,
       description: 'The Serinus® 44 analyser delivers precise and reliable performance at excellent value. It uses proven chemiluminescence technology and an external thermal catalytic converter to measure NO, NO2, NOx and NH3 in ambient air.',
       features: []
@@ -108,7 +108,7 @@ const CAAQMS = () => {
     {
       category: 'Dynamic Calibrator',
       title: 'Dynamic Calibrator',
-      icon: <Activity className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Activity className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg9,
       description: 'ASP-580 Dynamic Calibrator is a multi-channel gas calibration instrument based on Microprocessor Technology and specifically developed for precise gas analyzer. By adopting high precision mass flow controller and standard gas, the calibrator provides calibration standard gas for zero point and span test of multiple gas parameters, as well as four gas sources at the same time. Dynamic calibrator can be equipped with built-in programmable ozone generator, which can be used not only for accurate and reliable ozone calibration, but also for GPT to generate NO2. The ozone generator adopts multi-point piecewise linear drive to ensure the repeatability and accuracy of ozone concentration; the optional photometer also enables higher precision control of the ozone generator. Dynamic calibrator has fast response, high repeatability, high precision and is easy to use. It can also be customized according to customer requirements.',
       features: []
@@ -116,7 +116,7 @@ const CAAQMS = () => {
     {
       category: 'Zero Gas Generator',
       title: 'Zero Gas Generator',
-      icon: <Droplet className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Droplet className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg10,
       description: 'ASP-590 Zero Gas Generator is an instrument that provides clean, dry zero gas. The Zero Gas Generator includes an external oil-free air compressor, pressure flow controller, water removal system, SO2, NO, NO2, O3 and H2S remover, CO and hydrocarbon remover. The Zero Gas Generator is based on adsorption, filtration, reaction and other principles to remove SO2, NO, NO2, O3, H2S, CO, NH3, hydrocarbons and particulate matters in the air, and output dry and clean air. An internal water removal system removes moisture from the air, produces air of which dew point is below -20°C, and is independent of the dew point at the inlet. It is also helpful to remove other gases and greatly prolongs the service life of the chemical remover.',
       features: []
@@ -124,7 +124,7 @@ const CAAQMS = () => {
     {
       category: 'Online VOC Analyzer',
       title: 'Online VOC Analyzer',
-      icon: <Search className="w-12 h-12 text-blue-500 mb-4" strokeWidth={1.5} />,
+      icon: <Search className="w-12 h-12 text-[#0078BF] mb-4" strokeWidth={1.5} />,
       image: systemImg11,
       description: 'This measuring instrument is a state-of-the-art VOC monitor that uses a hydrogen flame ionization detector with heating of all measurement lines. The sample flow path is heated to a high temperature for measurement (HOT FID), so it can measure a wide range of T-VOCs quickly and continuously, from low concentration and low boiling point to high concentration and high boiling point. In addition, the use of a corrosion-resistant FID allows it to measure organic chlorine gases. In the unlikely event that the hydrogen flame goes out, the instrument is designed to automatically shut off the hydrogen line, so you can use it with peace of mind.',
       features: []
@@ -147,7 +147,7 @@ const CAAQMS = () => {
               <span>/</span>
               <Link to="/products" className="hover:text-white transition-colors">Products</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">CAAQMS</span>
+              <span className="text-[#0078BF] font-medium">CAAQMS</span>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@ const CAAQMS = () => {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-5 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
                         isSelected
-                          ? 'bg-[#2563eb] text-white'
+                          ? 'bg-[#0078BF] text-white'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                       }`}
                     >
@@ -210,12 +210,12 @@ const CAAQMS = () => {
                   {/* Clean Content Area */}
                   <div className="flex-1 p-6 lg:p-8 flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block px-2.5 py-0.5 bg-[#eff6ff] text-[#2563eb] text-[10px] font-bold uppercase tracking-wider rounded-full">
+                      <span className="inline-block px-2.5 py-0.5 bg-[#0078BF]/10 text-[#0078BF] text-[10px] font-bold uppercase tracking-wider rounded-full">
                         {product.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#1d4ed8] mb-3 leading-tight">
+                    <h2 className="text-xl lg:text-2xl font-extrabold text-[#0078BF] mb-3 leading-tight">
                       {product.title}
                     </h2>
                     
@@ -249,7 +249,7 @@ const CAAQMS = () => {
                           }}
                           className={`inline-flex items-center justify-center font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-colors text-sm cursor-pointer ${
                             isProductAdded(product.title)
-                              ? 'bg-blue-50 border border-blue-300 text-blue-700 hover:bg-blue-100'
+                              ? 'bg-[#0078BF]/10 border border-[#0078BF]/40 text-[#0078BF] hover:bg-[#0078BF]/20'
                               : 'bg-white border border-gray-200 text-gray-900 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
@@ -262,7 +262,7 @@ const CAAQMS = () => {
                             }
                             navigate('/contact');
                           }}
-                          className="inline-flex items-center justify-center bg-blue-600 border border-blue-600 text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-blue-700 transition-colors text-sm cursor-pointer"
+                          className="inline-flex items-center justify-center bg-[#0078BF] border border-[#0078BF] text-white font-semibold py-2.5 px-6 rounded-xl shadow-sm hover:bg-[#0066a3] transition-colors text-sm cursor-pointer"
                         >
                           Get Quote
                         </button>

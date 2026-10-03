@@ -172,7 +172,7 @@ const ContactSection = () => {
                     {quoteProducts.map((product) => (
                       <li key={product} className="flex items-center justify-between gap-2 text-sm text-gray-200">
                         <span className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0078BF] flex-shrink-0" />
                           {product}
                         </span>
                         <button

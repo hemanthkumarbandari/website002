@@ -106,11 +106,11 @@ const Home = () => {
       <section id="environmental" className="py-16 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-[#0079bf] tracking-tight mb-3">Environmental</h2>
+            <h2 className="text-3xl font-extrabold text-[#0078BF] tracking-tight mb-3">Environmental</h2>
             <p className="text-gray-500 text-sm max-w-2xl">
               Advanced online monitoring solutions for ambient air, stack emissions, and effluent compliance.
             </p>
-            <div className="mt-3 h-1 w-20 bg-[#0079bf] rounded-full" />
+            <div className="mt-3 h-1 w-20 bg-[#0078BF] rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {environmentalProducts.map((product, index) => (
@@ -130,11 +130,11 @@ const Home = () => {
       <section id="analytical" className="py-16 bg-[#f8f9fa] scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-[#0079bf] tracking-tight mb-3">Analytical</h2>
+            <h2 className="text-3xl font-extrabold text-[#0078BF] tracking-tight mb-3">Analytical</h2>
             <p className="text-gray-500 text-sm max-w-2xl">
               Precision gas chromatography and specialized analytical systems for laboratory, medical, and process applications.
             </p>
-            <div className="mt-3 h-1 w-20 bg-[#0079bf] rounded-full" />
+            <div className="mt-3 h-1 w-20 bg-[#0078BF] rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {analyticalProducts.map((product, index) => (

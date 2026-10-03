@@ -29,7 +29,7 @@ const Navbar = () => {
             >
               <Link 
                 to="/products" 
-                className="text-gray-700 group-hover:text-[#0079bf] px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors h-full"
+                className="text-gray-700 group-hover:text-[#0078BF] px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors h-full"
               >
                 <span>Products</span>
                 <ChevronDown className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
@@ -41,25 +41,25 @@ const Navbar = () => {
                   <div>
                     <Link 
                       to="/products#environmental" 
-                      className="text-xs font-bold text-[#0079bf] uppercase tracking-wider block mb-3 pb-1 border-b border-blue-100 hover:underline"
+                      className="text-xs font-bold text-[#0078BF] uppercase tracking-wider block mb-3 pb-1 border-b border-[#0078BF]/20 hover:underline"
                     >
                       Environmental
                     </Link>
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <Link to="/products/caaqms" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">CAAQMS</Link>
+                        <Link to="/products/caaqms" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">CAAQMS</Link>
                       </li>
                       <li>
-                        <Link to="/products/cems" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">CEMS</Link>
+                        <Link to="/products/cems" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">CEMS</Link>
                       </li>
                       <li>
-                        <Link to="/products/eqms" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">EQMS</Link>
+                        <Link to="/products/eqms" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">EQMS</Link>
                       </li>
                       <li>
-                        <Link to="/products/air" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Online Air Quality</Link>
+                        <Link to="/products/air" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Online Air Quality</Link>
                       </li>
                       <li>
-                        <Link to="/products/water" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Online Water Quality</Link>
+                        <Link to="/products/water" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Online Water Quality</Link>
                       </li>
                     </ul>
                   </div>
@@ -67,28 +67,28 @@ const Navbar = () => {
                   <div className="border-l border-gray-100 pl-6">
                     <Link 
                       to="/products#analytical" 
-                      className="text-xs font-bold text-[#0079bf] uppercase tracking-wider block mb-3 pb-1 border-b border-blue-100 hover:underline"
+                      className="text-xs font-bold text-[#0078BF] uppercase tracking-wider block mb-3 pb-1 border-b border-[#0078BF]/20 hover:underline"
                     >
                       Analytical
                     </Link>
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <Link to="/products/analytical/general-purpose" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">General Purpose</Link>
+                        <Link to="/products/analytical/general-purpose" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">General Purpose</Link>
                       </li>
                       <li>
-                        <Link to="/products/analytical/process" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Process</Link>
+                        <Link to="/products/analytical/process" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Process</Link>
                       </li>
                       <li>
-                        <Link to="/products/analytical/lab" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Lab Use</Link>
+                        <Link to="/products/analytical/lab" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Lab Use</Link>
                       </li>
                       <li>
-                        <Link to="/products/analytical/medical" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Medical</Link>
+                        <Link to="/products/analytical/medical" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Medical</Link>
                       </li>
                       <li>
-                        <Link to="/products/analytical/environmental" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Environmental</Link>
+                        <Link to="/products/analytical/environmental" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Environmental</Link>
                       </li>
                       <li>
-                        <Link to="/products/analytical/attachment" className="text-gray-600 hover:text-blue-600 block py-1 transition-colors">Attachment</Link>
+                        <Link to="/products/analytical/attachment" className="text-gray-600 hover:text-[#0078BF] block py-1 transition-colors">Attachment</Link>
                       </li>
                     </ul>
                   </div>
@@ -128,14 +128,14 @@ const Navbar = () => {
                 <Link to="/products" onClick={() => setIsOpen(false)} className="text-gray-700 font-medium">Products</Link>
               </div>
               <div className="pl-6 space-y-1">
-                <p className="text-xs font-bold text-[#0079bf] uppercase tracking-wider pt-2">Environmental</p>
+                <p className="text-xs font-bold text-[#0078BF] uppercase tracking-wider pt-2">Environmental</p>
                 <Link to="/products/caaqms" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">CAAQMS</Link>
                 <Link to="/products/cems" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">CEMS</Link>
                 <Link to="/products/eqms" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">EQMS</Link>
                 <Link to="/products/air" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">Online Air Quality</Link>
                 <Link to="/products/water" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">Online Water Quality</Link>
                 
-                <p className="text-xs font-bold text-[#0079bf] uppercase tracking-wider pt-3">Analytical</p>
+                <p className="text-xs font-bold text-[#0078BF] uppercase tracking-wider pt-3">Analytical</p>
                 <Link to="/products/analytical/general-purpose" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">General Purpose</Link>
                 <Link to="/products/analytical/process" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">Process</Link>
                 <Link to="/products/analytical/lab" onClick={() => setIsOpen(false)} className="text-gray-600 block py-1 text-sm">Lab Use</Link>

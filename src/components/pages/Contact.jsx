@@ -19,7 +19,7 @@ const Contact = () => {
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Contact</span>
+              <span className="text-[#0078BF] font-medium">Contact</span>
             </div>
           </div>
         </div>

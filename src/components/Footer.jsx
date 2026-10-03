@@ -22,7 +22,7 @@ const Footer = () => {
             <h2 className="text-3xl font-bold tracking-tighter text-white">ASP</h2>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 group">
-                <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-[#0078BF] mt-1 flex-shrink-0" />
                 <div className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
                   <span className="font-bold text-gray-300 block mb-1 uppercase tracking-wider text-[10px]">Address</span>
                   106, 1st Floor, Plot No. 31, Hanumanatha Reddy Complex, <br />
@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3 group">
-                <Phone className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[#0078BF] mt-1 flex-shrink-0" />
                 <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
                    <span className="font-bold text-gray-300 block mb-1 uppercase tracking-wider text-[10px]">Contact</span>
                   <span className="font-bold text-gray-300">Mobile:</span> +91 9921866889<br />
@@ -38,7 +38,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3 group">
-                <Mail className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#0078BF] mt-1 flex-shrink-0" />
                 <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
                   <span className="font-bold text-gray-300 block mb-1 uppercase tracking-wider text-[10px]">Email</span>
                   support@aspinstruments.co.in
@@ -51,14 +51,14 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2 inline-block">Useful Links</h3>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>Home</Link></li>
-              <li><Link to="/products" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>Products</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>Services</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>Contact us</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>Home</Link></li>
+              <li><Link to="/products" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>Products</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>Services</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>Contact us</Link></li>
             </ul>
           </div>
 
@@ -66,14 +66,14 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-lg font-bold text-white border-b border-gray-800 pb-2 inline-block">Our Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/products/caaqms" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>CAAQMS</Link></li>
-              <li><Link to="/products/cems" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>CEMS</Link></li>
-              <li><Link to="/services/data-uploading" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>Data Uploading</Link></li>
-              <li><Link to="/products/eqms" className="text-gray-400 hover:text-blue-400 text-sm transition-colors flex items-center">
-                <span className="w-1.5 h-1.5 bg-blue-500/30 rounded-full mr-2"></span>EQMS</Link></li>
+              <li><Link to="/products/caaqms" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>CAAQMS</Link></li>
+              <li><Link to="/products/cems" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>CEMS</Link></li>
+              <li><Link to="/services/data-uploading" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>Data Uploading</Link></li>
+              <li><Link to="/products/eqms" className="text-gray-400 hover:text-[#0078BF] text-sm transition-colors flex items-center">
+                <span className="w-1.5 h-1.5 bg-[#0078BF]/30 rounded-full mr-2"></span>EQMS</Link></li>
             </ul>
           </div>
 
@@ -87,7 +87,7 @@ const Footer = () => {
                   className="w-full h-auto object-contain"
                 />
               </div>
-              <div className="absolute inset-0 bg-blue-500/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[#0078BF]/15 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
             </div>
           </div>
 

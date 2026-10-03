@@ -15,7 +15,7 @@ const DataUploading = () => {
               <span>/</span>
               <Link to="/services" className="hover:text-white transition-colors">Services</Link>
               <span>/</span>
-              <span className="text-blue-400 font-medium">Data Uploading</span>
+              <span className="text-[#0078BF] font-medium">Data Uploading</span>
             </div>
           </div>
         </div>
@@ -39,8 +39,8 @@ const DataUploading = () => {
           {/* Clean Content Area */}
           <div className="flex-1 p-8 lg:p-12 flex flex-col">
             <div className="mb-6">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
-                <Database className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-[#0078BF]/10 rounded-2xl flex items-center justify-center mb-6">
+                <Database className="w-8 h-8 text-[#0078BF]" />
               </div>
               <h2 className="text-3xl font-extrabold text-gray-900 mb-4 leading-tight">
                 Data Uploading and Management Service
@@ -84,7 +84,7 @@ const DataUploading = () => {
             </div>
 
             <div className="mt-12 pt-8 border-t border-gray-100">
-              <Link to="/contact" className="inline-flex items-center justify-center bg-[#2563eb] text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all transform hover:-translate-y-1 group">
+              <Link to="/contact" className="inline-flex items-center justify-center bg-[#0078BF] text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-[#0078BF]/25 hover:bg-[#0066a3] transition-all transform hover:-translate-y-1 group">
                 Request Service Details
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
